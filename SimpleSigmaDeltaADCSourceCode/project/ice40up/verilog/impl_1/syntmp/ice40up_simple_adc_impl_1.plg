@@ -1,0 +1,17 @@
+@P:  Worst Slack : -1.013
+@P:  ADC_top|i_clk_in - Estimated Frequency : NA
+@P:  ADC_top|i_clk_in - Requested Frequency : 300.5 MHz
+@P:  ADC_top|i_clk_in - Estimated Period : NA
+@P:  ADC_top|i_clk_in - Requested Period : 3.328
+@P:  ADC_top|i_clk_in - Slack : NA
+@P:  System - Estimated Frequency : 148.1 MHz
+@P:  System - Requested Frequency : 174.3 MHz
+@P:  System - Estimated Period : 6.751
+@P:  System - Requested Period : 5.738
+@P:  System - Slack : -1.013
+@P: ADC_top Part : ice40up5ksg48high-performance_1.2v
+@P: ADC_top I/O primitives : 13
+@P: ADC_top I/O Register bits : 0
+@P: ADC_top Register bits (Non I/O) : 63 (1%)
+@P: ADC_top Total Luts : 36 of 5280 (0%)
+@P:  CPU Time : 0h:00m:01s

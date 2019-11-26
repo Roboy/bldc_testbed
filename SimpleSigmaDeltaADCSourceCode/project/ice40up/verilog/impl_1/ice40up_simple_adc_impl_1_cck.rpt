@@ -1,0 +1,75 @@
+# Synopsys Constraint Checker, version maplat, Build 1868R, built Nov 13 2017
+# Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+
+# Written on Mon Sep 24 15:06:10 2018
+
+
+##### DESIGN INFO #######################################################
+
+Top View:                "ADC_top"
+Constraint File(s):      (none)
+
+
+
+
+##### SUMMARY ############################################################
+
+Found 0 issues in 0 out of 0 constraints
+
+
+##### DETAILS ############################################################
+
+
+
+Clock Relationships
+*******************
+
+Starting             Ending               |     rise to rise     |     fall to fall     |     rise to fall     |     fall to rise                     
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+System               ADC_top|i_clk_in     |     6.849            |     No paths         |     No paths         |     No paths                         
+ADC_top|i_clk_in     ADC_top|i_clk_in     |     6.849            |     No paths         |     No paths         |     No paths                         
+=====================================================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+Unconstrained Start/End Points
+******************************
+
+p:i_analog_cmp
+p:i_rst_in
+p:o_analog_out
+p:o_digital_out[0]
+p:o_digital_out[1]
+p:o_digital_out[2]
+p:o_digital_out[3]
+p:o_digital_out[4]
+p:o_digital_out[5]
+p:o_digital_out[6]
+p:o_digital_out[7]
+p:o_sample_rdy
+
+
+Inapplicable constraints
+************************
+
+(none)
+
+
+Applicable constraints with issues
+**********************************
+
+(none)
+
+
+Constraints with matching wildcard expressions
+**********************************************
+
+(none)
+
+
+Library Report
+**************
+
+
+# End of Constraint Checker Report

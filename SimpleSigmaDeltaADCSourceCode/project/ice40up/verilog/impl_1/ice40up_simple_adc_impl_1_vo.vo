@@ -1,0 +1,2297 @@
+
+// Verilog netlist produced by program backanno, Version Radiant (64-bit) 1.0.0.350.6
+
+// backanno -n Verilog -o ice40up_simple_adc_impl_1_vo.vo -sp High-Performance_1.2V -w -neg -gui ice40up_simple_adc_impl_1.udb 
+// Netlist created on Mon Sep 24 15:06:26 2018
+// Netlist written on Mon Sep 24 15:06:30 2018
+// Design is for device iCE40UP5K
+// Design is for package SG48
+// Design is for performance grade 6
+
+`timescale 1 ns / 1 ps
+
+module ADC_top ( o_sample_rdy, o_analog_out, o_digital_out, i_analog_cmp, 
+                 i_rst_in, i_clk_in );
+  input  i_analog_cmp, i_rst_in, i_clk_in;
+  output o_sample_rdy, o_analog_out;
+  output [7:0] o_digital_out;
+  wire   \SSD_ADC/sigma_s_0[9].CO0 , \SSD_ADC/sigma_cry[8] , 
+         \SSD_ADC/sigma[9] , \SSD_ADC/sigma_s[9] , 
+         \SSD_ADC/sigma_cry_0[7].CO0 , \SSD_ADC/sigma[8] , 
+         \SSD_ADC/sigma_cry[6] , \SSD_ADC/sigma[7] , \SSD_ADC/sigma_s[7] , 
+         \SSD_ADC/sigma_s[8] , \SSD_ADC/sigma_cry_0[5].CO0 , 
+         \SSD_ADC/sigma[6] , \SSD_ADC/sigma_cry[4] , \SSD_ADC/sigma[5] , 
+         \SSD_ADC/sigma_s[5] , \SSD_ADC/sigma_s[6] , 
+         \SSD_ADC/sigma_cry_0[3].CO0 , \SSD_ADC/sigma[4] , 
+         \SSD_ADC/sigma_cry[2] , \SSD_ADC/sigma[3] , \SSD_ADC/sigma_s[3] , 
+         \SSD_ADC/sigma_s[4] , \SSD_ADC/sigma_cry_0[1].CO0 , 
+         \SSD_ADC/sigma[2] , \SSD_ADC/sigma_cry[0] , \SSD_ADC/sigma[1] , 
+         \SSD_ADC/sigma_s[1] , \SSD_ADC/sigma_s[2] , 
+         \SSD_ADC/sigma_cry_0[0].CO0 , \SSD_ADC/sigma[0] , 
+         \o_digital_out_obuf[0].vcc , \SSD_ADC/sigma_s[0] , 
+         \SSD_ADC/counter_s[9] , \SSD_ADC/counter_s_0[9].CO0 , 
+         \SSD_ADC/counter_cry[8] , \SSD_ADC/counter[9] , i_rst_in_c_i, 
+         i_clk_in_c, \SSD_ADC/counter_s[8] , \SSD_ADC/counter_s[7] , 
+         \SSD_ADC/counter_cry_0[7].CO0 , \SSD_ADC/counter[8] , 
+         \SSD_ADC/counter_cry[6] , \SSD_ADC/counter[7] , 
+         \SSD_ADC/counter_s[6] , \SSD_ADC/counter_s[5] , 
+         \SSD_ADC/counter_cry_0[5].CO0 , \SSD_ADC/counter[6] , 
+         \SSD_ADC/counter_cry[4] , \SSD_ADC/counter[5] , 
+         \SSD_ADC/counter_s[4] , \SSD_ADC/counter_s[3] , 
+         \SSD_ADC/counter_cry_0[3].CO0 , \SSD_ADC/counter[4] , 
+         \SSD_ADC/counter_cry[2] , \SSD_ADC/counter[3] , 
+         \SSD_ADC/counter_s[2] , \SSD_ADC/counter_s[1] , 
+         \SSD_ADC/counter_cry_0[1].CO0 , \SSD_ADC/counter[2] , 
+         \SSD_ADC/counter_cry[0] , \SSD_ADC/counter[1] , 
+         \SSD_ADC/counter_s[0] , \SSD_ADC/counter_cry_0[0].CO0 , 
+         \SSD_ADC/counter[0] , \SSD_ADC/box_ave/un5_accum_cry_9_0.CO0 , 
+         \SSD_ADC/box_ave/accum[10] , \SSD_ADC/box_ave/un5_accum_cry_8 , 
+         \SSD_ADC/box_ave/accum[9] , \SSD_ADC/box_ave/un5_accum_cry_9_0_S0 , 
+         \SSD_ADC/box_ave/un5_accum_cry_9_0_S1 , 
+         \SSD_ADC/box_ave/un5_accum_cry_7_0.CO0 , \SSD_ADC/box_ave/accum[8] , 
+         \SSD_ADC/box_ave/un5_accum_cry_6 , \SSD_ADC/box_ave/accum_0_Z[7] , 
+         \SSD_ADC/box_ave/raw_data_d1[7] , 
+         \SSD_ADC/box_ave/un5_accum_cry_7_0_S0 , 
+         \SSD_ADC/box_ave/un5_accum_cry_7_0_S1 , 
+         \SSD_ADC/box_ave/un5_accum_cry_5_0.CO0 , \SSD_ADC/box_ave/accum[6] , 
+         \SSD_ADC/box_ave/raw_data_d1[6] , \SSD_ADC/box_ave/un5_accum_cry_4 , 
+         \SSD_ADC/box_ave/accum[5] , \SSD_ADC/box_ave/raw_data_d1[5] , 
+         \SSD_ADC/box_ave/un5_accum_cry_5_0_S0 , 
+         \SSD_ADC/box_ave/un5_accum_cry_5_0_S1 , 
+         \SSD_ADC/box_ave/un5_accum_cry_3_0.CO0 , \SSD_ADC/box_ave/accum[4] , 
+         \SSD_ADC/box_ave/raw_data_d1[4] , \SSD_ADC/box_ave/un5_accum_cry_2 , 
+         \SSD_ADC/box_ave/accum[3] , \SSD_ADC/box_ave/raw_data_d1[3] , 
+         \SSD_ADC/box_ave/un5_accum_cry_3_0_S0 , 
+         \SSD_ADC/box_ave/un5_accum_cry_3_0_S1 , 
+         \SSD_ADC/box_ave/un5_accum_cry_1_0.CO0 , \SSD_ADC/box_ave/accum[2] , 
+         \SSD_ADC/box_ave/raw_data_d1[2] , \SSD_ADC/box_ave/un5_accum_cry_0 , 
+         \SSD_ADC/box_ave/accum[1] , \SSD_ADC/box_ave/raw_data_d1[1] , 
+         \SSD_ADC/box_ave/un5_accum_cry_1_0_S0 , 
+         \SSD_ADC/box_ave/un5_accum_cry_1_0_S1 , 
+         \SSD_ADC/box_ave/un5_accum_cry_0_0.CO0 , \SSD_ADC/box_ave/accum[0] , 
+         \SSD_ADC/box_ave/raw_data_d1[0] , 
+         \SSD_ADC/box_ave/un5_accum_cry_0_0_S1 , \SSD_ADC/sigma_lm[3] , 
+         \SSD_ADC/sigma_lm[2] , \SSD_ADC/rollover , \SSD_ADC/sigmae_0_i , 
+         \SSD_ADC/sigma_lm[8] , \SSD_ADC/sigma_lm[9] , \SSD_ADC/sigma_lm[6] , 
+         \SSD_ADC/sigma_lm[7] , \SSD_ADC/sigma_lm[4] , \SSD_ADC/sigma_lm[5] , 
+         \SSD_ADC/sigma_lm[0] , \SSD_ADC/sigma_lm[1] , o_analog_out_c, 
+         \SSD_ADC/rollover/sig_000/FeedThruLUT , \SSD_ADC/accum_rdy , 
+         \SSD_ADC/sigma[8]/sig_002/FeedThruLUT , 
+         \SSD_ADC/sigma[9]/sig_001/FeedThruLUT , \SSD_ADC/accum[7] , 
+         \SSD_ADC/accum[6] , \SSD_ADC/sigma[6]/sig_004/FeedThruLUT , 
+         \SSD_ADC/sigma[7]/sig_003/FeedThruLUT , \SSD_ADC/accum[5] , 
+         \SSD_ADC/accum[4] , \SSD_ADC/sigma[4]/sig_006/FeedThruLUT , 
+         \SSD_ADC/sigma[5]/sig_005/FeedThruLUT , \SSD_ADC/accum[3] , 
+         \SSD_ADC/accum[2] , \SSD_ADC/sigma[2]/sig_008/FeedThruLUT , 
+         \SSD_ADC/sigma[3]/sig_007/FeedThruLUT , \SSD_ADC/accum[1] , 
+         \SSD_ADC/accum[0] , \SSD_ADC/accum_rdy/sig_010/FeedThruLUT , 
+         \SSD_ADC/box_ave/sample_d1/sig_009/FeedThruLUT , 
+         \SSD_ADC/box_ave/sample_d1 , \SSD_ADC/box_ave/sample_d2 , 
+         \SSD_ADC/box_ave/accum_4[8] , \SSD_ADC/box_ave/accum_4[6] , 
+         \SSD_ADC/box_ave/count[1] , \SSD_ADC/box_ave/count[2] , 
+         \SSD_ADC/box_ave/count[0] , \SSD_ADC/box_ave/accum10_0 , 
+         \SSD_ADC/box_ave/accumulate , \SSD_ADC/box_ave/accum_4[4] , 
+         \SSD_ADC/box_ave/accum_4[5] , \SSD_ADC/box_ave/accum_4[2] , 
+         \SSD_ADC/box_ave/accum_4[3] , \SSD_ADC/box_ave/accum_4[0] , 
+         \SSD_ADC/box_ave/accum_4[1] , \SSD_ADC/box_ave/count_3[0] , 
+         \SSD_ADC/box_ave/count_3[1] , \SSD_ADC/accum[6]/sig_012/FeedThruLUT , 
+         \SSD_ADC/accum[7]/sig_011/FeedThruLUT , 
+         \SSD_ADC/accum[4]/sig_014/FeedThruLUT , 
+         \SSD_ADC/accum[5]/sig_013/FeedThruLUT , 
+         \SSD_ADC/accum[2]/sig_016/FeedThruLUT , 
+         \SSD_ADC/accum[3]/sig_015/FeedThruLUT , 
+         \SSD_ADC/accum[0]/sig_018/FeedThruLUT , 
+         \SSD_ADC/accum[1]/sig_017/FeedThruLUT , \SSD_ADC/box_ave/accum_4[9] , 
+         \SSD_ADC/box_ave/accum_4[10] , \SSD_ADC/box_ave/accum_4[7] , 
+         \SSD_ADC/box_ave/accum[9]/sig_020/FeedThruLUT , 
+         \SSD_ADC/box_ave/accum[10]/sig_019/FeedThruLUT , 
+         \SSD_ADC/box_ave/latch_result , \o_digital_out_c[7] , 
+         \o_digital_out_c[6] , 
+         \SSD_ADC/box_ave/accum_0_Z[7]/sig_022/FeedThruLUT , 
+         \SSD_ADC/box_ave/accum[8]/sig_021/FeedThruLUT , \o_digital_out_c[5] , 
+         \o_digital_out_c[4] , \SSD_ADC/box_ave/accum[5]/sig_024/FeedThruLUT , 
+         \SSD_ADC/box_ave/accum[6]/sig_023/FeedThruLUT , \o_digital_out_c[3] , 
+         \o_digital_out_c[2] , \SSD_ADC/box_ave/accum[3]/sig_026/FeedThruLUT , 
+         \SSD_ADC/box_ave/accum[4]/sig_025/FeedThruLUT , \o_digital_out_c[1] , 
+         \o_digital_out_c[0] , \SSD_ADC/un1_sigma_7_3 , \SSD_ADC/sigmae_0_i_1 , 
+         \SSD_ADC/un1_sigma_6 , \SSD_ADC/box_ave/sample_d2_RNILAFF , 
+         \SSD_ADC/rollover_2_6 , \SSD_ADC/rollover_2 , \SSD_ADC/rollover_2_5 , 
+         \SSD_ADC/box_ave/count_3[2] , \SSD_ADC/box_ave/latch_result$n0 , 
+         o_sample_rdy_c, i_rst_in_c, i_analog_cmp_c;
+
+  SLICE_0 SLICE_0( .D1(\SSD_ADC/sigma_s_0[9].CO0 ), 
+    .D0(\SSD_ADC/sigma_cry[8] ), .B0(\SSD_ADC/sigma[9] ), 
+    .CIN0(\SSD_ADC/sigma_cry[8] ), .CIN1(\SSD_ADC/sigma_s_0[9].CO0 ), 
+    .F0(\SSD_ADC/sigma_s[9] ), .COUT0(\SSD_ADC/sigma_s_0[9].CO0 ));
+  SLICE_1 SLICE_1( .D1(\SSD_ADC/sigma_cry_0[7].CO0 ), .B1(\SSD_ADC/sigma[8] ), 
+    .D0(\SSD_ADC/sigma_cry[6] ), .B0(\SSD_ADC/sigma[7] ), 
+    .CIN0(\SSD_ADC/sigma_cry[6] ), .CIN1(\SSD_ADC/sigma_cry_0[7].CO0 ), 
+    .F0(\SSD_ADC/sigma_s[7] ), .F1(\SSD_ADC/sigma_s[8] ), 
+    .COUT1(\SSD_ADC/sigma_cry[8] ), .COUT0(\SSD_ADC/sigma_cry_0[7].CO0 ));
+  SLICE_2 SLICE_2( .D1(\SSD_ADC/sigma_cry_0[5].CO0 ), .B1(\SSD_ADC/sigma[6] ), 
+    .D0(\SSD_ADC/sigma_cry[4] ), .B0(\SSD_ADC/sigma[5] ), 
+    .CIN0(\SSD_ADC/sigma_cry[4] ), .CIN1(\SSD_ADC/sigma_cry_0[5].CO0 ), 
+    .F0(\SSD_ADC/sigma_s[5] ), .F1(\SSD_ADC/sigma_s[6] ), 
+    .COUT1(\SSD_ADC/sigma_cry[6] ), .COUT0(\SSD_ADC/sigma_cry_0[5].CO0 ));
+  SLICE_3 SLICE_3( .D1(\SSD_ADC/sigma_cry_0[3].CO0 ), .B1(\SSD_ADC/sigma[4] ), 
+    .D0(\SSD_ADC/sigma_cry[2] ), .B0(\SSD_ADC/sigma[3] ), 
+    .CIN0(\SSD_ADC/sigma_cry[2] ), .CIN1(\SSD_ADC/sigma_cry_0[3].CO0 ), 
+    .F0(\SSD_ADC/sigma_s[3] ), .F1(\SSD_ADC/sigma_s[4] ), 
+    .COUT1(\SSD_ADC/sigma_cry[4] ), .COUT0(\SSD_ADC/sigma_cry_0[3].CO0 ));
+  SLICE_4 SLICE_4( .D1(\SSD_ADC/sigma_cry_0[1].CO0 ), .B1(\SSD_ADC/sigma[2] ), 
+    .D0(\SSD_ADC/sigma_cry[0] ), .B0(\SSD_ADC/sigma[1] ), 
+    .CIN0(\SSD_ADC/sigma_cry[0] ), .CIN1(\SSD_ADC/sigma_cry_0[1].CO0 ), 
+    .F0(\SSD_ADC/sigma_s[1] ), .F1(\SSD_ADC/sigma_s[2] ), 
+    .COUT1(\SSD_ADC/sigma_cry[2] ), .COUT0(\SSD_ADC/sigma_cry_0[1].CO0 ));
+  SLICE_5 SLICE_5( .D1(\SSD_ADC/sigma_cry_0[0].CO0 ), .B1(\SSD_ADC/sigma[0] ), 
+    .C0(\o_digital_out_obuf[0].vcc ), .B0(\o_digital_out_obuf[0].vcc ), 
+    .CIN1(\SSD_ADC/sigma_cry_0[0].CO0 ), .F1(\SSD_ADC/sigma_s[0] ), 
+    .COUT1(\SSD_ADC/sigma_cry[0] ), .COUT0(\SSD_ADC/sigma_cry_0[0].CO0 ));
+  SLICE_6 SLICE_6( .DI0(\SSD_ADC/counter_s[9] ), 
+    .D1(\SSD_ADC/counter_s_0[9].CO0 ), .D0(\SSD_ADC/counter_cry[8] ), 
+    .B0(\SSD_ADC/counter[9] ), .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .CIN0(\SSD_ADC/counter_cry[8] ), .CIN1(\SSD_ADC/counter_s_0[9].CO0 ), 
+    .Q0(\SSD_ADC/counter[9] ), .F0(\SSD_ADC/counter_s[9] ), 
+    .COUT0(\SSD_ADC/counter_s_0[9].CO0 ));
+  SLICE_7 SLICE_7( .DI1(\SSD_ADC/counter_s[8] ), .DI0(\SSD_ADC/counter_s[7] ), 
+    .D1(\SSD_ADC/counter_cry_0[7].CO0 ), .B1(\SSD_ADC/counter[8] ), 
+    .D0(\SSD_ADC/counter_cry[6] ), .B0(\SSD_ADC/counter[7] ), 
+    .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), .CIN0(\SSD_ADC/counter_cry[6] ), 
+    .CIN1(\SSD_ADC/counter_cry_0[7].CO0 ), .Q0(\SSD_ADC/counter[7] ), 
+    .Q1(\SSD_ADC/counter[8] ), .F0(\SSD_ADC/counter_s[7] ), 
+    .F1(\SSD_ADC/counter_s[8] ), .COUT1(\SSD_ADC/counter_cry[8] ), 
+    .COUT0(\SSD_ADC/counter_cry_0[7].CO0 ));
+  SLICE_8 SLICE_8( .DI1(\SSD_ADC/counter_s[6] ), .DI0(\SSD_ADC/counter_s[5] ), 
+    .D1(\SSD_ADC/counter_cry_0[5].CO0 ), .B1(\SSD_ADC/counter[6] ), 
+    .D0(\SSD_ADC/counter_cry[4] ), .B0(\SSD_ADC/counter[5] ), 
+    .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), .CIN0(\SSD_ADC/counter_cry[4] ), 
+    .CIN1(\SSD_ADC/counter_cry_0[5].CO0 ), .Q0(\SSD_ADC/counter[5] ), 
+    .Q1(\SSD_ADC/counter[6] ), .F0(\SSD_ADC/counter_s[5] ), 
+    .F1(\SSD_ADC/counter_s[6] ), .COUT1(\SSD_ADC/counter_cry[6] ), 
+    .COUT0(\SSD_ADC/counter_cry_0[5].CO0 ));
+  SLICE_9 SLICE_9( .DI1(\SSD_ADC/counter_s[4] ), .DI0(\SSD_ADC/counter_s[3] ), 
+    .D1(\SSD_ADC/counter_cry_0[3].CO0 ), .B1(\SSD_ADC/counter[4] ), 
+    .D0(\SSD_ADC/counter_cry[2] ), .B0(\SSD_ADC/counter[3] ), 
+    .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), .CIN0(\SSD_ADC/counter_cry[2] ), 
+    .CIN1(\SSD_ADC/counter_cry_0[3].CO0 ), .Q0(\SSD_ADC/counter[3] ), 
+    .Q1(\SSD_ADC/counter[4] ), .F0(\SSD_ADC/counter_s[3] ), 
+    .F1(\SSD_ADC/counter_s[4] ), .COUT1(\SSD_ADC/counter_cry[4] ), 
+    .COUT0(\SSD_ADC/counter_cry_0[3].CO0 ));
+  SLICE_10 SLICE_10( .DI1(\SSD_ADC/counter_s[2] ), 
+    .DI0(\SSD_ADC/counter_s[1] ), .D1(\SSD_ADC/counter_cry_0[1].CO0 ), 
+    .B1(\SSD_ADC/counter[2] ), .D0(\SSD_ADC/counter_cry[0] ), 
+    .B0(\SSD_ADC/counter[1] ), .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .CIN0(\SSD_ADC/counter_cry[0] ), .CIN1(\SSD_ADC/counter_cry_0[1].CO0 ), 
+    .Q0(\SSD_ADC/counter[1] ), .Q1(\SSD_ADC/counter[2] ), 
+    .F0(\SSD_ADC/counter_s[1] ), .F1(\SSD_ADC/counter_s[2] ), 
+    .COUT1(\SSD_ADC/counter_cry[2] ), .COUT0(\SSD_ADC/counter_cry_0[1].CO0 ));
+  SLICE_11 SLICE_11( .DI1(\SSD_ADC/counter_s[0] ), 
+    .D1(\SSD_ADC/counter_cry_0[0].CO0 ), .B1(\SSD_ADC/counter[0] ), 
+    .C0(\o_digital_out_obuf[0].vcc ), .B0(\o_digital_out_obuf[0].vcc ), 
+    .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .CIN1(\SSD_ADC/counter_cry_0[0].CO0 ), .Q1(\SSD_ADC/counter[0] ), 
+    .F1(\SSD_ADC/counter_s[0] ), .COUT1(\SSD_ADC/counter_cry[0] ), 
+    .COUT0(\SSD_ADC/counter_cry_0[0].CO0 ));
+  SLICE_12 SLICE_12( .D1(\SSD_ADC/box_ave/un5_accum_cry_9_0.CO0 ), 
+    .B1(\SSD_ADC/box_ave/accum[10] ), .D0(\SSD_ADC/box_ave/un5_accum_cry_8 ), 
+    .B0(\SSD_ADC/box_ave/accum[9] ), .CIN0(\SSD_ADC/box_ave/un5_accum_cry_8 ), 
+    .CIN1(\SSD_ADC/box_ave/un5_accum_cry_9_0.CO0 ), 
+    .F0(\SSD_ADC/box_ave/un5_accum_cry_9_0_S0 ), 
+    .F1(\SSD_ADC/box_ave/un5_accum_cry_9_0_S1 ), 
+    .COUT0(\SSD_ADC/box_ave/un5_accum_cry_9_0.CO0 ));
+  SLICE_13 SLICE_13( .D1(\SSD_ADC/box_ave/un5_accum_cry_7_0.CO0 ), 
+    .B1(\SSD_ADC/box_ave/accum[8] ), .D0(\SSD_ADC/box_ave/un5_accum_cry_6 ), 
+    .C0(\SSD_ADC/box_ave/accum_0_Z[7] ), .B0(\SSD_ADC/box_ave/raw_data_d1[7] ), 
+    .CIN0(\SSD_ADC/box_ave/un5_accum_cry_6 ), 
+    .CIN1(\SSD_ADC/box_ave/un5_accum_cry_7_0.CO0 ), 
+    .F0(\SSD_ADC/box_ave/un5_accum_cry_7_0_S0 ), 
+    .F1(\SSD_ADC/box_ave/un5_accum_cry_7_0_S1 ), 
+    .COUT1(\SSD_ADC/box_ave/un5_accum_cry_8 ), 
+    .COUT0(\SSD_ADC/box_ave/un5_accum_cry_7_0.CO0 ));
+  SLICE_14 SLICE_14( .D1(\SSD_ADC/box_ave/un5_accum_cry_5_0.CO0 ), 
+    .C1(\SSD_ADC/box_ave/accum[6] ), .B1(\SSD_ADC/box_ave/raw_data_d1[6] ), 
+    .D0(\SSD_ADC/box_ave/un5_accum_cry_4 ), .C0(\SSD_ADC/box_ave/accum[5] ), 
+    .B0(\SSD_ADC/box_ave/raw_data_d1[5] ), 
+    .CIN0(\SSD_ADC/box_ave/un5_accum_cry_4 ), 
+    .CIN1(\SSD_ADC/box_ave/un5_accum_cry_5_0.CO0 ), 
+    .F0(\SSD_ADC/box_ave/un5_accum_cry_5_0_S0 ), 
+    .F1(\SSD_ADC/box_ave/un5_accum_cry_5_0_S1 ), 
+    .COUT1(\SSD_ADC/box_ave/un5_accum_cry_6 ), 
+    .COUT0(\SSD_ADC/box_ave/un5_accum_cry_5_0.CO0 ));
+  SLICE_15 SLICE_15( .D1(\SSD_ADC/box_ave/un5_accum_cry_3_0.CO0 ), 
+    .C1(\SSD_ADC/box_ave/accum[4] ), .B1(\SSD_ADC/box_ave/raw_data_d1[4] ), 
+    .D0(\SSD_ADC/box_ave/un5_accum_cry_2 ), .C0(\SSD_ADC/box_ave/accum[3] ), 
+    .B0(\SSD_ADC/box_ave/raw_data_d1[3] ), 
+    .CIN0(\SSD_ADC/box_ave/un5_accum_cry_2 ), 
+    .CIN1(\SSD_ADC/box_ave/un5_accum_cry_3_0.CO0 ), 
+    .F0(\SSD_ADC/box_ave/un5_accum_cry_3_0_S0 ), 
+    .F1(\SSD_ADC/box_ave/un5_accum_cry_3_0_S1 ), 
+    .COUT1(\SSD_ADC/box_ave/un5_accum_cry_4 ), 
+    .COUT0(\SSD_ADC/box_ave/un5_accum_cry_3_0.CO0 ));
+  SLICE_16 SLICE_16( .D1(\SSD_ADC/box_ave/un5_accum_cry_1_0.CO0 ), 
+    .C1(\SSD_ADC/box_ave/accum[2] ), .B1(\SSD_ADC/box_ave/raw_data_d1[2] ), 
+    .D0(\SSD_ADC/box_ave/un5_accum_cry_0 ), .C0(\SSD_ADC/box_ave/accum[1] ), 
+    .B0(\SSD_ADC/box_ave/raw_data_d1[1] ), 
+    .CIN0(\SSD_ADC/box_ave/un5_accum_cry_0 ), 
+    .CIN1(\SSD_ADC/box_ave/un5_accum_cry_1_0.CO0 ), 
+    .F0(\SSD_ADC/box_ave/un5_accum_cry_1_0_S0 ), 
+    .F1(\SSD_ADC/box_ave/un5_accum_cry_1_0_S1 ), 
+    .COUT1(\SSD_ADC/box_ave/un5_accum_cry_2 ), 
+    .COUT0(\SSD_ADC/box_ave/un5_accum_cry_1_0.CO0 ));
+  SLICE_17 SLICE_17( .D1(\SSD_ADC/box_ave/un5_accum_cry_0_0.CO0 ), 
+    .C1(\SSD_ADC/box_ave/accum[0] ), .B1(\SSD_ADC/box_ave/raw_data_d1[0] ), 
+    .CIN1(\SSD_ADC/box_ave/un5_accum_cry_0_0.CO0 ), 
+    .F1(\SSD_ADC/box_ave/un5_accum_cry_0_0_S1 ), 
+    .COUT1(\SSD_ADC/box_ave/un5_accum_cry_0 ), 
+    .COUT0(\SSD_ADC/box_ave/un5_accum_cry_0_0.CO0 ));
+  SLICE_18 SLICE_18( .DI1(\SSD_ADC/sigma_lm[3] ), .DI0(\SSD_ADC/sigma_lm[2] ), 
+    .D1(\SSD_ADC/rollover ), .A1(\SSD_ADC/sigma_s[3] ), 
+    .D0(\SSD_ADC/sigma_s[2] ), .A0(\SSD_ADC/rollover ), 
+    .CE(\SSD_ADC/sigmae_0_i ), .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .Q0(\SSD_ADC/sigma[2] ), .Q1(\SSD_ADC/sigma[3] ), 
+    .F0(\SSD_ADC/sigma_lm[2] ), .F1(\SSD_ADC/sigma_lm[3] ));
+  SLICE_19 SLICE_19( .DI1(\SSD_ADC/sigma_lm[8] ), .DI0(\SSD_ADC/sigma_lm[9] ), 
+    .B1(\SSD_ADC/rollover ), .A1(\SSD_ADC/sigma_s[8] ), 
+    .C0(\SSD_ADC/rollover ), .A0(\SSD_ADC/sigma_s[9] ), 
+    .CE(\SSD_ADC/sigmae_0_i ), .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .Q0(\SSD_ADC/sigma[9] ), .Q1(\SSD_ADC/sigma[8] ), 
+    .F0(\SSD_ADC/sigma_lm[9] ), .F1(\SSD_ADC/sigma_lm[8] ));
+  SLICE_21 SLICE_21( .DI1(\SSD_ADC/sigma_lm[6] ), .DI0(\SSD_ADC/sigma_lm[7] ), 
+    .D1(\SSD_ADC/rollover ), .C1(\SSD_ADC/sigma_s[6] ), 
+    .B0(\SSD_ADC/sigma_s[7] ), .A0(\SSD_ADC/rollover ), 
+    .CE(\SSD_ADC/sigmae_0_i ), .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .Q0(\SSD_ADC/sigma[7] ), .Q1(\SSD_ADC/sigma[6] ), 
+    .F0(\SSD_ADC/sigma_lm[7] ), .F1(\SSD_ADC/sigma_lm[6] ));
+  SLICE_23 SLICE_23( .DI1(\SSD_ADC/sigma_lm[4] ), .DI0(\SSD_ADC/sigma_lm[5] ), 
+    .C1(\SSD_ADC/sigma_s[4] ), .A1(\SSD_ADC/rollover ), 
+    .D0(\SSD_ADC/sigma_s[5] ), .B0(\SSD_ADC/rollover ), 
+    .CE(\SSD_ADC/sigmae_0_i ), .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .Q0(\SSD_ADC/sigma[5] ), .Q1(\SSD_ADC/sigma[4] ), 
+    .F0(\SSD_ADC/sigma_lm[5] ), .F1(\SSD_ADC/sigma_lm[4] ));
+  SLICE_25 SLICE_25( .DI1(\SSD_ADC/sigma_lm[0] ), .DI0(\SSD_ADC/sigma_lm[1] ), 
+    .D1(o_analog_out_c), .C1(\SSD_ADC/sigma_s[0] ), .A1(\SSD_ADC/rollover ), 
+    .D0(\SSD_ADC/rollover ), .B0(\SSD_ADC/sigma_s[1] ), 
+    .CE(\SSD_ADC/sigmae_0_i ), .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .Q0(\SSD_ADC/sigma[1] ), .Q1(\SSD_ADC/sigma[0] ), 
+    .F0(\SSD_ADC/sigma_lm[1] ), .F1(\SSD_ADC/sigma_lm[0] ));
+  SLICE_27 SLICE_27( .DI0(\SSD_ADC/rollover/sig_000/FeedThruLUT ), 
+    .D0(\SSD_ADC/rollover ), .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .Q0(\SSD_ADC/accum_rdy ), .F0(\SSD_ADC/rollover/sig_000/FeedThruLUT ));
+  SLICE_29 SLICE_29( .DI1(\SSD_ADC/sigma[8]/sig_002/FeedThruLUT ), 
+    .DI0(\SSD_ADC/sigma[9]/sig_001/FeedThruLUT ), .D1(\SSD_ADC/sigma[8] ), 
+    .C0(\SSD_ADC/sigma[9] ), .CE(\SSD_ADC/rollover ), .LSR(i_rst_in_c_i), 
+    .CLK(i_clk_in_c), .Q0(\SSD_ADC/accum[7] ), .Q1(\SSD_ADC/accum[6] ), 
+    .F0(\SSD_ADC/sigma[9]/sig_001/FeedThruLUT ), 
+    .F1(\SSD_ADC/sigma[8]/sig_002/FeedThruLUT ));
+  SLICE_31 SLICE_31( .DI1(\SSD_ADC/sigma[6]/sig_004/FeedThruLUT ), 
+    .DI0(\SSD_ADC/sigma[7]/sig_003/FeedThruLUT ), .A1(\SSD_ADC/sigma[6] ), 
+    .D0(\SSD_ADC/sigma[7] ), .CE(\SSD_ADC/rollover ), .LSR(i_rst_in_c_i), 
+    .CLK(i_clk_in_c), .Q0(\SSD_ADC/accum[5] ), .Q1(\SSD_ADC/accum[4] ), 
+    .F0(\SSD_ADC/sigma[7]/sig_003/FeedThruLUT ), 
+    .F1(\SSD_ADC/sigma[6]/sig_004/FeedThruLUT ));
+  SLICE_33 SLICE_33( .DI1(\SSD_ADC/sigma[4]/sig_006/FeedThruLUT ), 
+    .DI0(\SSD_ADC/sigma[5]/sig_005/FeedThruLUT ), .D1(\SSD_ADC/sigma[4] ), 
+    .D0(\SSD_ADC/sigma[5] ), .CE(\SSD_ADC/rollover ), .LSR(i_rst_in_c_i), 
+    .CLK(i_clk_in_c), .Q0(\SSD_ADC/accum[3] ), .Q1(\SSD_ADC/accum[2] ), 
+    .F0(\SSD_ADC/sigma[5]/sig_005/FeedThruLUT ), 
+    .F1(\SSD_ADC/sigma[4]/sig_006/FeedThruLUT ));
+  SLICE_35 SLICE_35( .DI1(\SSD_ADC/sigma[2]/sig_008/FeedThruLUT ), 
+    .DI0(\SSD_ADC/sigma[3]/sig_007/FeedThruLUT ), .A1(\SSD_ADC/sigma[2] ), 
+    .D0(\SSD_ADC/sigma[3] ), .CE(\SSD_ADC/rollover ), .LSR(i_rst_in_c_i), 
+    .CLK(i_clk_in_c), .Q0(\SSD_ADC/accum[1] ), .Q1(\SSD_ADC/accum[0] ), 
+    .F0(\SSD_ADC/sigma[3]/sig_007/FeedThruLUT ), 
+    .F1(\SSD_ADC/sigma[2]/sig_008/FeedThruLUT ));
+  SLICE_37 SLICE_37( .DI1(\SSD_ADC/accum_rdy/sig_010/FeedThruLUT ), 
+    .DI0(\SSD_ADC/box_ave/sample_d1/sig_009/FeedThruLUT ), 
+    .C1(\SSD_ADC/accum_rdy ), .B0(\SSD_ADC/box_ave/sample_d1 ), 
+    .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), .Q0(\SSD_ADC/box_ave/sample_d2 ), 
+    .Q1(\SSD_ADC/box_ave/sample_d1 ), 
+    .F0(\SSD_ADC/box_ave/sample_d1/sig_009/FeedThruLUT ), 
+    .F1(\SSD_ADC/accum_rdy/sig_010/FeedThruLUT ));
+  SLICE_39 SLICE_39( .DI1(\SSD_ADC/box_ave/accum_4[8] ), 
+    .DI0(\SSD_ADC/box_ave/accum_4[6] ), .D1(\SSD_ADC/box_ave/count[1] ), 
+    .C1(\SSD_ADC/box_ave/un5_accum_cry_7_0_S1 ), 
+    .B1(\SSD_ADC/box_ave/count[2] ), .A1(\SSD_ADC/box_ave/count[0] ), 
+    .D0(\SSD_ADC/box_ave/un5_accum_cry_5_0_S1 ), 
+    .C0(\SSD_ADC/box_ave/count[0] ), .B0(\SSD_ADC/box_ave/accum10_0 ), 
+    .A0(\SSD_ADC/box_ave/raw_data_d1[6] ), .CE(\SSD_ADC/box_ave/accumulate ), 
+    .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), .Q0(\SSD_ADC/box_ave/accum[6] ), 
+    .Q1(\SSD_ADC/box_ave/accum[8] ), .F0(\SSD_ADC/box_ave/accum_4[6] ), 
+    .F1(\SSD_ADC/box_ave/accum_4[8] ));
+  SLICE_40 SLICE_40( .DI1(\SSD_ADC/box_ave/accum_4[4] ), 
+    .DI0(\SSD_ADC/box_ave/accum_4[5] ), .D1(\SSD_ADC/box_ave/accum10_0 ), 
+    .C1(\SSD_ADC/box_ave/raw_data_d1[4] ), .B1(\SSD_ADC/box_ave/count[0] ), 
+    .A1(\SSD_ADC/box_ave/un5_accum_cry_3_0_S1 ), 
+    .D0(\SSD_ADC/box_ave/un5_accum_cry_5_0_S0 ), 
+    .C0(\SSD_ADC/box_ave/count[0] ), .B0(\SSD_ADC/box_ave/raw_data_d1[5] ), 
+    .A0(\SSD_ADC/box_ave/accum10_0 ), .CE(\SSD_ADC/box_ave/accumulate ), 
+    .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), .Q0(\SSD_ADC/box_ave/accum[5] ), 
+    .Q1(\SSD_ADC/box_ave/accum[4] ), .F0(\SSD_ADC/box_ave/accum_4[5] ), 
+    .F1(\SSD_ADC/box_ave/accum_4[4] ));
+  SLICE_42 SLICE_42( .DI1(\SSD_ADC/box_ave/accum_4[2] ), 
+    .DI0(\SSD_ADC/box_ave/accum_4[3] ), 
+    .D1(\SSD_ADC/box_ave/un5_accum_cry_1_0_S1 ), 
+    .C1(\SSD_ADC/box_ave/raw_data_d1[2] ), .B1(\SSD_ADC/box_ave/accum10_0 ), 
+    .A1(\SSD_ADC/box_ave/count[0] ), 
+    .D0(\SSD_ADC/box_ave/un5_accum_cry_3_0_S0 ), 
+    .C0(\SSD_ADC/box_ave/raw_data_d1[3] ), .B0(\SSD_ADC/box_ave/count[0] ), 
+    .A0(\SSD_ADC/box_ave/accum10_0 ), .CE(\SSD_ADC/box_ave/accumulate ), 
+    .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), .Q0(\SSD_ADC/box_ave/accum[3] ), 
+    .Q1(\SSD_ADC/box_ave/accum[2] ), .F0(\SSD_ADC/box_ave/accum_4[3] ), 
+    .F1(\SSD_ADC/box_ave/accum_4[2] ));
+  SLICE_44 SLICE_44( .DI1(\SSD_ADC/box_ave/accum_4[0] ), 
+    .DI0(\SSD_ADC/box_ave/accum_4[1] ), .D1(\SSD_ADC/box_ave/raw_data_d1[0] ), 
+    .C1(\SSD_ADC/box_ave/count[0] ), 
+    .B1(\SSD_ADC/box_ave/un5_accum_cry_0_0_S1 ), 
+    .A1(\SSD_ADC/box_ave/accum10_0 ), 
+    .D0(\SSD_ADC/box_ave/un5_accum_cry_1_0_S0 ), 
+    .C0(\SSD_ADC/box_ave/count[0] ), .B0(\SSD_ADC/box_ave/accum10_0 ), 
+    .A0(\SSD_ADC/box_ave/raw_data_d1[1] ), .CE(\SSD_ADC/box_ave/accumulate ), 
+    .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), .Q0(\SSD_ADC/box_ave/accum[1] ), 
+    .Q1(\SSD_ADC/box_ave/accum[0] ), .F0(\SSD_ADC/box_ave/accum_4[1] ), 
+    .F1(\SSD_ADC/box_ave/accum_4[0] ));
+  SLICE_47 SLICE_47( .DI1(\SSD_ADC/box_ave/count_3[0] ), 
+    .DI0(\SSD_ADC/box_ave/count_3[1] ), .C1(\SSD_ADC/box_ave/sample_d2 ), 
+    .B1(\SSD_ADC/box_ave/count[0] ), .A1(\SSD_ADC/box_ave/sample_d1 ), 
+    .D0(\SSD_ADC/box_ave/sample_d1 ), .C0(\SSD_ADC/box_ave/count[1] ), 
+    .B0(\SSD_ADC/box_ave/sample_d2 ), .A0(\SSD_ADC/box_ave/count[0] ), 
+    .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), .Q0(\SSD_ADC/box_ave/count[1] ), 
+    .Q1(\SSD_ADC/box_ave/count[0] ), .F0(\SSD_ADC/box_ave/count_3[1] ), 
+    .F1(\SSD_ADC/box_ave/count_3[0] ));
+  SLICE_49 SLICE_49( .DI1(\SSD_ADC/accum[6]/sig_012/FeedThruLUT ), 
+    .DI0(\SSD_ADC/accum[7]/sig_011/FeedThruLUT ), .A1(\SSD_ADC/accum[6] ), 
+    .D0(\SSD_ADC/accum[7] ), .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .Q0(\SSD_ADC/box_ave/raw_data_d1[7] ), 
+    .Q1(\SSD_ADC/box_ave/raw_data_d1[6] ), 
+    .F0(\SSD_ADC/accum[7]/sig_011/FeedThruLUT ), 
+    .F1(\SSD_ADC/accum[6]/sig_012/FeedThruLUT ));
+  SLICE_51 SLICE_51( .DI1(\SSD_ADC/accum[4]/sig_014/FeedThruLUT ), 
+    .DI0(\SSD_ADC/accum[5]/sig_013/FeedThruLUT ), .D1(\SSD_ADC/accum[4] ), 
+    .A0(\SSD_ADC/accum[5] ), .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .Q0(\SSD_ADC/box_ave/raw_data_d1[5] ), 
+    .Q1(\SSD_ADC/box_ave/raw_data_d1[4] ), 
+    .F0(\SSD_ADC/accum[5]/sig_013/FeedThruLUT ), 
+    .F1(\SSD_ADC/accum[4]/sig_014/FeedThruLUT ));
+  SLICE_53 SLICE_53( .DI1(\SSD_ADC/accum[2]/sig_016/FeedThruLUT ), 
+    .DI0(\SSD_ADC/accum[3]/sig_015/FeedThruLUT ), .B1(\SSD_ADC/accum[2] ), 
+    .B0(\SSD_ADC/accum[3] ), .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .Q0(\SSD_ADC/box_ave/raw_data_d1[3] ), 
+    .Q1(\SSD_ADC/box_ave/raw_data_d1[2] ), 
+    .F0(\SSD_ADC/accum[3]/sig_015/FeedThruLUT ), 
+    .F1(\SSD_ADC/accum[2]/sig_016/FeedThruLUT ));
+  SLICE_55 SLICE_55( .DI1(\SSD_ADC/accum[0]/sig_018/FeedThruLUT ), 
+    .DI0(\SSD_ADC/accum[1]/sig_017/FeedThruLUT ), .B1(\SSD_ADC/accum[0] ), 
+    .B0(\SSD_ADC/accum[1] ), .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .Q0(\SSD_ADC/box_ave/raw_data_d1[1] ), 
+    .Q1(\SSD_ADC/box_ave/raw_data_d1[0] ), 
+    .F0(\SSD_ADC/accum[1]/sig_017/FeedThruLUT ), 
+    .F1(\SSD_ADC/accum[0]/sig_018/FeedThruLUT ));
+  SLICE_57 SLICE_57( .DI1(\SSD_ADC/box_ave/accum_4[9] ), 
+    .DI0(\SSD_ADC/box_ave/accum_4[10] ), 
+    .D1(\SSD_ADC/box_ave/un5_accum_cry_9_0_S0 ), 
+    .C1(\SSD_ADC/box_ave/count[2] ), .B1(\SSD_ADC/box_ave/count[0] ), 
+    .A1(\SSD_ADC/box_ave/count[1] ), .D0(\SSD_ADC/box_ave/count[1] ), 
+    .C0(\SSD_ADC/box_ave/un5_accum_cry_9_0_S1 ), 
+    .B0(\SSD_ADC/box_ave/count[2] ), .A0(\SSD_ADC/box_ave/count[0] ), 
+    .CE(\SSD_ADC/box_ave/accumulate ), .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .Q0(\SSD_ADC/box_ave/accum[10] ), .Q1(\SSD_ADC/box_ave/accum[9] ), 
+    .F0(\SSD_ADC/box_ave/accum_4[10] ), .F1(\SSD_ADC/box_ave/accum_4[9] ));
+  SLICE_60 SLICE_60( .DI0(\SSD_ADC/box_ave/accum_4[7] ), 
+    .D0(\SSD_ADC/box_ave/un5_accum_cry_7_0_S0 ), 
+    .C0(\SSD_ADC/box_ave/raw_data_d1[7] ), .B0(\SSD_ADC/box_ave/count[0] ), 
+    .A0(\SSD_ADC/box_ave/accum10_0 ), .CE(\SSD_ADC/box_ave/accumulate ), 
+    .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), .Q0(\SSD_ADC/box_ave/accum_0_Z[7] ), 
+    .F0(\SSD_ADC/box_ave/accum_4[7] ));
+  SLICE_61 SLICE_61( .DI1(\SSD_ADC/box_ave/accum[9]/sig_020/FeedThruLUT ), 
+    .DI0(\SSD_ADC/box_ave/accum[10]/sig_019/FeedThruLUT ), 
+    .C1(\SSD_ADC/box_ave/accum[9] ), .D0(\SSD_ADC/box_ave/accum[10] ), 
+    .CE(\SSD_ADC/box_ave/latch_result ), .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .Q0(\o_digital_out_c[7] ), .Q1(\o_digital_out_c[6] ), 
+    .F0(\SSD_ADC/box_ave/accum[10]/sig_019/FeedThruLUT ), 
+    .F1(\SSD_ADC/box_ave/accum[9]/sig_020/FeedThruLUT ));
+  SLICE_63 SLICE_63( .DI1(\SSD_ADC/box_ave/accum_0_Z[7]/sig_022/FeedThruLUT ), 
+    .DI0(\SSD_ADC/box_ave/accum[8]/sig_021/FeedThruLUT ), 
+    .C1(\SSD_ADC/box_ave/accum_0_Z[7] ), .A0(\SSD_ADC/box_ave/accum[8] ), 
+    .CE(\SSD_ADC/box_ave/latch_result ), .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .Q0(\o_digital_out_c[5] ), .Q1(\o_digital_out_c[4] ), 
+    .F0(\SSD_ADC/box_ave/accum[8]/sig_021/FeedThruLUT ), 
+    .F1(\SSD_ADC/box_ave/accum_0_Z[7]/sig_022/FeedThruLUT ));
+  SLICE_65 SLICE_65( .DI1(\SSD_ADC/box_ave/accum[5]/sig_024/FeedThruLUT ), 
+    .DI0(\SSD_ADC/box_ave/accum[6]/sig_023/FeedThruLUT ), 
+    .C1(\SSD_ADC/box_ave/accum[5] ), .B0(\SSD_ADC/box_ave/accum[6] ), 
+    .CE(\SSD_ADC/box_ave/latch_result ), .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .Q0(\o_digital_out_c[3] ), .Q1(\o_digital_out_c[2] ), 
+    .F0(\SSD_ADC/box_ave/accum[6]/sig_023/FeedThruLUT ), 
+    .F1(\SSD_ADC/box_ave/accum[5]/sig_024/FeedThruLUT ));
+  SLICE_67 SLICE_67( .DI1(\SSD_ADC/box_ave/accum[3]/sig_026/FeedThruLUT ), 
+    .DI0(\SSD_ADC/box_ave/accum[4]/sig_025/FeedThruLUT ), 
+    .D1(\SSD_ADC/box_ave/accum[3] ), .B0(\SSD_ADC/box_ave/accum[4] ), 
+    .CE(\SSD_ADC/box_ave/latch_result ), .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .Q0(\o_digital_out_c[1] ), .Q1(\o_digital_out_c[0] ), 
+    .F0(\SSD_ADC/box_ave/accum[4]/sig_025/FeedThruLUT ), 
+    .F1(\SSD_ADC/box_ave/accum[3]/sig_026/FeedThruLUT ));
+  SLICE_71 SLICE_71( .D1(\SSD_ADC/un1_sigma_7_3 ), .C1(\SSD_ADC/sigmae_0_i_1 ), 
+    .B1(o_analog_out_c), .A1(\SSD_ADC/un1_sigma_6 ), .D0(\SSD_ADC/sigma[1] ), 
+    .C0(\SSD_ADC/sigma[0] ), .B0(\SSD_ADC/rollover ), .A0(o_analog_out_c), 
+    .F0(\SSD_ADC/sigmae_0_i_1 ), .F1(\SSD_ADC/sigmae_0_i ));
+  SLICE_73 SLICE_73( .C1(\SSD_ADC/box_ave/sample_d2_RNILAFF ), 
+    .B1(\SSD_ADC/box_ave/count[1] ), .D0(\SSD_ADC/box_ave/sample_d1 ), 
+    .C0(\SSD_ADC/box_ave/count[0] ), .B0(\SSD_ADC/box_ave/sample_d2 ), 
+    .A0(\SSD_ADC/box_ave/count[2] ), .F0(\SSD_ADC/box_ave/sample_d2_RNILAFF ), 
+    .F1(\SSD_ADC/box_ave/latch_result ));
+  SLICE_75 SLICE_75( .D0(\SSD_ADC/counter[9] ), .C0(\SSD_ADC/counter[0] ), 
+    .B0(\SSD_ADC/counter[1] ), .A0(\SSD_ADC/counter[8] ), 
+    .F0(\SSD_ADC/rollover_2_6 ));
+  SLICE_76 SLICE_76( .DI1(\SSD_ADC/rollover_2 ), .D1(\SSD_ADC/counter[6] ), 
+    .C1(\SSD_ADC/rollover_2_5 ), .B1(\SSD_ADC/counter[7] ), 
+    .A1(\SSD_ADC/rollover_2_6 ), .D0(\SSD_ADC/counter[2] ), 
+    .C0(\SSD_ADC/counter[4] ), .B0(\SSD_ADC/counter[3] ), 
+    .A0(\SSD_ADC/counter[5] ), .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), 
+    .Q1(\SSD_ADC/rollover ), .F0(\SSD_ADC/rollover_2_5 ), 
+    .F1(\SSD_ADC/rollover_2 ));
+  SLICE_77 SLICE_77( .DI1(\SSD_ADC/box_ave/count_3[2] ), 
+    .D1(\SSD_ADC/box_ave/count[0] ), .C1(\SSD_ADC/box_ave/accumulate ), 
+    .B1(\SSD_ADC/box_ave/count[1] ), .A1(\SSD_ADC/box_ave/count[2] ), 
+    .D0(\SSD_ADC/box_ave/count[2] ), .C0(\SSD_ADC/box_ave/count[1] ), 
+    .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), .Q1(\SSD_ADC/box_ave/count[2] ), 
+    .F0(\SSD_ADC/box_ave/accum10_0 ), .F1(\SSD_ADC/box_ave/count_3[2] ));
+  SLICE_78 SLICE_78( .DI1(\SSD_ADC/box_ave/latch_result$n0 ), 
+    .D1(\SSD_ADC/box_ave/count[1] ), .B1(\SSD_ADC/box_ave/sample_d2_RNILAFF ), 
+    .D0(\SSD_ADC/box_ave/sample_d2 ), .B0(\SSD_ADC/box_ave/sample_d1 ), 
+    .LSR(i_rst_in_c_i), .CLK(i_clk_in_c), .Q1(o_sample_rdy_c), 
+    .F0(\SSD_ADC/box_ave/accumulate ), .F1(\SSD_ADC/box_ave/latch_result$n0 ));
+  SLICE_79 SLICE_79( .D0(\SSD_ADC/sigma[4] ), .C0(\SSD_ADC/sigma[6] ), 
+    .B0(\SSD_ADC/sigma[5] ), .A0(\SSD_ADC/sigma[7] ), 
+    .F0(\SSD_ADC/un1_sigma_7_3 ));
+  SLICE_80 SLICE_80( .D0(\SSD_ADC/sigma[2] ), .C0(\SSD_ADC/sigma[9] ), 
+    .B0(\SSD_ADC/sigma[3] ), .A0(\SSD_ADC/sigma[8] ), 
+    .F0(\SSD_ADC/un1_sigma_6 ));
+  SLICE_81 SLICE_81( .B0(i_rst_in_c), .F0(i_rst_in_c_i));
+  SLICE_82 SLICE_82( .F0(\o_digital_out_obuf[0].vcc ));
+  SSD_ADC_DDRInst0 \SSD_ADC.DDRInst0 ( .PADDI(i_analog_cmp_c), 
+    .INCLK(i_clk_in_c), .DI0(o_analog_out_c));
+  o_sample_rdy o_sample_rdy_I( .PADDO(o_sample_rdy_c), 
+    .o_sample_rdy(o_sample_rdy));
+  o_analog_out o_analog_out_I( .PADDO(o_analog_out_c), 
+    .o_analog_out(o_analog_out));
+  o_digital_out_7_ \o_digital_out[7]_I ( .PADDO(\o_digital_out_c[7] ), 
+    .odigitalout7(o_digital_out[7]));
+  o_digital_out_6_ \o_digital_out[6]_I ( .PADDO(\o_digital_out_c[6] ), 
+    .odigitalout6(o_digital_out[6]));
+  o_digital_out_5_ \o_digital_out[5]_I ( .PADDO(\o_digital_out_c[5] ), 
+    .odigitalout5(o_digital_out[5]));
+  o_digital_out_4_ \o_digital_out[4]_I ( .PADDO(\o_digital_out_c[4] ), 
+    .odigitalout4(o_digital_out[4]));
+  o_digital_out_3_ \o_digital_out[3]_I ( .PADDO(\o_digital_out_c[3] ), 
+    .odigitalout3(o_digital_out[3]));
+  o_digital_out_2_ \o_digital_out[2]_I ( .PADDO(\o_digital_out_c[2] ), 
+    .odigitalout2(o_digital_out[2]));
+  o_digital_out_1_ \o_digital_out[1]_I ( .PADDO(\o_digital_out_c[1] ), 
+    .odigitalout1(o_digital_out[1]));
+  o_digital_out_0_ \o_digital_out[0]_I ( .PADDO(\o_digital_out_c[0] ), 
+    .odigitalout0(o_digital_out[0]));
+  i_analog_cmp i_analog_cmp_I( .PADDI(i_analog_cmp_c), 
+    .i_analog_cmp(i_analog_cmp));
+  i_rst_in i_rst_in_I( .PADDI(i_rst_in_c), .i_rst_in(i_rst_in));
+  i_clk_in i_clk_in_I( .PADDI(i_clk_in_c), .i_clk_in(i_clk_in));
+endmodule
+
+module SLICE_0 ( input D1, D0, B0, CIN0, CIN1, output F0, COUT0 );
+  wire   GNDI;
+
+  fa2 \SSD_ADC/sigma_s_0[9].fa22_inst ( .A0(GNDI), .B0(B0), .C0(GNDI), .D0(D0), 
+    .A1(GNDI), .B1(GNDI), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), .S0(F0), 
+    .S1(), .CO0(COUT0), .CO1());
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module fa2 ( input A0, B0, C0, D0, A1, B1, C1, D1, CI0, CI1, output S0, S1, 
+    CO0, CO1 );
+
+  FA2 inst1( .A0(A0), .B0(B0), .C0(C0), .D0(D0), .CI0(CI0), .A1(A1), .B1(B1), 
+    .C1(C1), .D1(D1), .CI1(CI1), .CO0(CO0), .CO1(CO1), .S0(S0), .S1(S1));
+  defparam inst1.INIT0 = "0xC33C";
+  defparam inst1.INIT1 = "0xC33C";
+endmodule
+
+module gnd ( output PWR0 );
+
+  VLO INST1( .Z(PWR0));
+endmodule
+
+module SLICE_1 ( input D1, B1, D0, B0, CIN0, CIN1, output F0, F1, COUT1, COUT0 );
+  wire   GNDI;
+
+  fa2 \SSD_ADC/sigma_cry_0[7].fa22_inst ( .A0(GNDI), .B0(B0), .C0(GNDI), 
+    .D0(D0), .A1(GNDI), .B1(B1), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
+    .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module SLICE_2 ( input D1, B1, D0, B0, CIN0, CIN1, output F0, F1, COUT1, COUT0 );
+  wire   GNDI;
+
+  fa2 \SSD_ADC/sigma_cry_0[5].fa22_inst ( .A0(GNDI), .B0(B0), .C0(GNDI), 
+    .D0(D0), .A1(GNDI), .B1(B1), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
+    .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module SLICE_3 ( input D1, B1, D0, B0, CIN0, CIN1, output F0, F1, COUT1, COUT0 );
+  wire   GNDI;
+
+  fa2 \SSD_ADC/sigma_cry_0[3].fa22_inst ( .A0(GNDI), .B0(B0), .C0(GNDI), 
+    .D0(D0), .A1(GNDI), .B1(B1), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
+    .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module SLICE_4 ( input D1, B1, D0, B0, CIN0, CIN1, output F0, F1, COUT1, COUT0 );
+  wire   GNDI;
+
+  fa2 \SSD_ADC/sigma_cry_0[1].fa22_inst ( .A0(GNDI), .B0(B0), .C0(GNDI), 
+    .D0(D0), .A1(GNDI), .B1(B1), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
+    .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module SLICE_5 ( input D1, B1, C0, B0, CIN1, output F1, COUT1, COUT0 );
+  wire   GNDI, VCCI;
+
+  fa2 \SSD_ADC/sigma_cry_0[0].fa22_inst ( .A0(GNDI), .B0(B0), .C0(C0), 
+    .D0(VCCI), .A1(GNDI), .B1(B1), .C1(GNDI), .D1(D1), .CI0(VCCI), .CI1(CIN1), 
+    .S0(), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module vcc ( output PWR1 );
+
+  VHI INST1( .Z(PWR1));
+endmodule
+
+module SLICE_6 ( input DI0, D1, D0, B0, LSR, CLK, CIN0, CIN1, output Q0, F0, 
+    COUT0 );
+  wire   GNDI, VCCI, DI0_dly, CLK_dly, LSR_dly;
+
+  fa2 \SSD_ADC/counter_s_0[9].fa22_inst ( .A0(GNDI), .B0(B0), .C0(GNDI), 
+    .D0(D0), .A1(GNDI), .B1(GNDI), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
+    .S0(F0), .S1(), .CO0(COUT0), .CO1());
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \SSD_ADC/counter_Z[9].ff_inst ( .D0(DI0_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module ffsre2 ( input D0, SP, CK, LSR, output Q );
+
+  FD1P3XZ INST01( .D(D0), .SP(SP), .CK(CK), .SR(LSR), .Q(Q));
+  defparam INST01.REGSET = "RESET";
+  defparam INST01.SRMODE = "ASYNC";
+endmodule
+
+module SLICE_7 ( input DI1, DI0, D1, B1, D0, B0, LSR, CLK, CIN0, CIN1, output 
+    Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
+
+  fa2 \SSD_ADC/counter_cry_0[7].fa22_inst ( .A0(GNDI), .B0(B0), .C0(GNDI), 
+    .D0(D0), .A1(GNDI), .B1(B1), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
+    .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \SSD_ADC/counter_Z[7].ff_inst ( .D0(DI0_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \SSD_ADC/counter_Z[8].ff_inst ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_8 ( input DI1, DI0, D1, B1, D0, B0, LSR, CLK, CIN0, CIN1, output 
+    Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
+
+  fa2 \SSD_ADC/counter_cry_0[5].fa22_inst ( .A0(GNDI), .B0(B0), .C0(GNDI), 
+    .D0(D0), .A1(GNDI), .B1(B1), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
+    .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \SSD_ADC/counter_Z[5].ff_inst ( .D0(DI0_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \SSD_ADC/counter_Z[6].ff_inst ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_9 ( input DI1, DI0, D1, B1, D0, B0, LSR, CLK, CIN0, CIN1, output 
+    Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
+
+  fa2 \SSD_ADC/counter_cry_0[3].fa22_inst ( .A0(GNDI), .B0(B0), .C0(GNDI), 
+    .D0(D0), .A1(GNDI), .B1(B1), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
+    .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \SSD_ADC/counter_Z[3].ff_inst ( .D0(DI0_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \SSD_ADC/counter_Z[4].ff_inst ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_10 ( input DI1, DI0, D1, B1, D0, B0, LSR, CLK, CIN0, CIN1, 
+    output Q0, Q1, F0, F1, COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
+
+  fa2 \SSD_ADC/counter_cry_0[1].fa22_inst ( .A0(GNDI), .B0(B0), .C0(GNDI), 
+    .D0(D0), .A1(GNDI), .B1(B1), .C1(GNDI), .D1(D1), .CI0(CIN0), .CI1(CIN1), 
+    .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \SSD_ADC/counter_Z[1].ff_inst ( .D0(DI0_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \SSD_ADC/counter_Z[2].ff_inst ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_11 ( input DI1, D1, B1, C0, B0, LSR, CLK, CIN1, output Q1, F1, 
+    COUT1, COUT0 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, LSR_dly;
+
+  fa2 \SSD_ADC/counter_cry_0[0].fa22_inst ( .A0(GNDI), .B0(B0), .C0(C0), 
+    .D0(VCCI), .A1(GNDI), .B1(B1), .C1(GNDI), .D1(D1), .CI0(VCCI), .CI1(CIN1), 
+    .S0(), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \SSD_ADC/counter_Z[0].ff_inst ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_12 ( input D1, B1, D0, B0, CIN0, CIN1, output F0, F1, COUT0 );
+  wire   GNDI;
+
+  fa2 \SSD_ADC/box_ave/un5_accum_cry_9_0.fa22_inst ( .A0(GNDI), .B0(B0), 
+    .C0(GNDI), .D0(D0), .A1(GNDI), .B1(B1), .C1(GNDI), .D1(D1), .CI0(CIN0), 
+    .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1());
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module SLICE_13 ( input D1, B1, D0, C0, B0, CIN0, CIN1, output F0, F1, COUT1, 
+    COUT0 );
+  wire   GNDI;
+
+  fa2 \SSD_ADC/box_ave/un5_accum_cry_7_0.fa22_inst ( .A0(GNDI), .B0(B0), 
+    .C0(C0), .D0(D0), .A1(GNDI), .B1(B1), .C1(GNDI), .D1(D1), .CI0(CIN0), 
+    .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module SLICE_14 ( input D1, C1, B1, D0, C0, B0, CIN0, CIN1, output F0, F1, 
+    COUT1, COUT0 );
+  wire   GNDI;
+
+  fa2 \SSD_ADC/box_ave/un5_accum_cry_5_0.fa22_inst ( .A0(GNDI), .B0(B0), 
+    .C0(C0), .D0(D0), .A1(GNDI), .B1(B1), .C1(C1), .D1(D1), .CI0(CIN0), 
+    .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module SLICE_15 ( input D1, C1, B1, D0, C0, B0, CIN0, CIN1, output F0, F1, 
+    COUT1, COUT0 );
+  wire   GNDI;
+
+  fa2 \SSD_ADC/box_ave/un5_accum_cry_3_0.fa22_inst ( .A0(GNDI), .B0(B0), 
+    .C0(C0), .D0(D0), .A1(GNDI), .B1(B1), .C1(C1), .D1(D1), .CI0(CIN0), 
+    .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module SLICE_16 ( input D1, C1, B1, D0, C0, B0, CIN0, CIN1, output F0, F1, 
+    COUT1, COUT0 );
+  wire   GNDI;
+
+  fa2 \SSD_ADC/box_ave/un5_accum_cry_1_0.fa22_inst ( .A0(GNDI), .B0(B0), 
+    .C0(C0), .D0(D0), .A1(GNDI), .B1(B1), .C1(C1), .D1(D1), .CI0(CIN0), 
+    .CI1(CIN1), .S0(F0), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (C0 => COUT0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (B0 => COUT0) = (0:0:0,0:0:0);
+    (CIN0 => COUT0) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module SLICE_17 ( input D1, C1, B1, CIN1, output F1, COUT1, COUT0 );
+  wire   GNDI, VCCI;
+
+  fa2 \SSD_ADC/box_ave/un5_accum_cry_0_0.fa22_inst ( .A0(GNDI), .B0(GNDI), 
+    .C0(GNDI), .D0(VCCI), .A1(GNDI), .B1(B1), .C1(C1), .D1(D1), .CI0(VCCI), 
+    .CI1(CIN1), .S0(), .S1(F1), .CO0(COUT0), .CO1(COUT1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (C1 => COUT1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B1 => COUT1) = (0:0:0,0:0:0);
+    (CIN1 => COUT1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module SLICE_18 ( input DI1, DI0, D1, A1, D0, A0, CE, LSR, CLK, output Q0, Q1, 
+    F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut4 \SSD_ADC/sigma_RNO[3] ( .A(A1), .B(GNDI), .C(GNDI), .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40001 \SSD_ADC/sigma_RNO[2] ( .A(A0), .B(GNDI), .C(GNDI), .D(D0), .Z(F0));
+  ffsre2 \SSD_ADC/sigma_Z[3].ff_inst ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \SSD_ADC/sigma_Z[2].ff_inst ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut4 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x00AA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40001 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x5500") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_19 ( input DI1, DI0, B1, A1, C0, A0, CE, LSR, CLK, output Q0, Q1, 
+    F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40002 \SSD_ADC/sigma_RNO[8] ( .A(A1), .B(B1), .C(GNDI), .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40003 \SSD_ADC/sigma_RNO[9] ( .A(A0), .B(GNDI), .C(C0), .D(GNDI), .Z(F0));
+  ffsre2 \SSD_ADC/sigma_Z[8].ff_inst ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \SSD_ADC/sigma_Z[9].ff_inst ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40002 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x2222") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40003 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0A0A") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_21 ( input DI1, DI0, D1, C1, B0, A0, CE, LSR, CLK, output Q0, Q1, 
+    F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40004 \SSD_ADC/sigma_RNO[6] ( .A(GNDI), .B(GNDI), .C(C1), .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40005 \SSD_ADC/sigma_RNO[7] ( .A(A0), .B(B0), .C(GNDI), .D(GNDI), .Z(F0));
+  ffsre2 \SSD_ADC/sigma_Z[6].ff_inst ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \SSD_ADC/sigma_Z[7].ff_inst ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40004 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x00F0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40005 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x4444") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_23 ( input DI1, DI0, C1, A1, D0, B0, CE, LSR, CLK, output Q0, Q1, 
+    F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40006 \SSD_ADC/sigma_RNO[4] ( .A(A1), .B(GNDI), .C(C1), .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40007 \SSD_ADC/sigma_RNO[5] ( .A(GNDI), .B(B0), .C(GNDI), .D(D0), .Z(F0));
+  ffsre2 \SSD_ADC/sigma_Z[4].ff_inst ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \SSD_ADC/sigma_Z[5].ff_inst ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40006 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x5050") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40007 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x3300") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_25 ( input DI1, DI0, D1, C1, A1, D0, B0, CE, LSR, CLK, output Q0, 
+    Q1, F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40008 \SSD_ADC/sigma_RNO[0] ( .A(A1), .B(GNDI), .C(C1), .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40009 \SSD_ADC/sigma_RNO[1] ( .A(GNDI), .B(B0), .C(GNDI), .D(D0), .Z(F0));
+  ffsre2 \SSD_ADC/sigma_Z[0].ff_inst ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \SSD_ADC/sigma_Z[1].ff_inst ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40008 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFA50") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40009 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x00CC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_27 ( input DI0, D0, LSR, CLK, output Q0, F0 );
+  wire   GNDI, VCCI, DI0_dly, CLK_dly, LSR_dly;
+
+  lut40010 SLICE_27_K0( .A(GNDI), .B(GNDI), .C(GNDI), .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \SSD_ADC/accum_rdy_Z.ff_inst ( .D0(DI0_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40010 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFF00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_29 ( input DI1, DI0, D1, C0, CE, LSR, CLK, output Q0, Q1, F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40011 SLICE_29_K1( .A(GNDI), .B(GNDI), .C(GNDI), .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40012 SLICE_29_K0( .A(GNDI), .B(GNDI), .C(C0), .D(GNDI), .Z(F0));
+  ffsre2 \SSD_ADC/accum_Z[6].ff_inst ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \SSD_ADC/accum_Z[7].ff_inst ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40011 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFF00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40012 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF0F0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_31 ( input DI1, DI0, A1, D0, CE, LSR, CLK, output Q0, Q1, F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40013 SLICE_31_K1( .A(A1), .B(GNDI), .C(GNDI), .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40010 SLICE_31_K0( .A(GNDI), .B(GNDI), .C(GNDI), .D(D0), .Z(F0));
+  ffsre2 \SSD_ADC/accum_Z[4].ff_inst ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \SSD_ADC/accum_Z[5].ff_inst ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40013 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xAAAA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_33 ( input DI1, DI0, D1, D0, CE, LSR, CLK, output Q0, Q1, F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40011 SLICE_33_K1( .A(GNDI), .B(GNDI), .C(GNDI), .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40010 SLICE_33_K0( .A(GNDI), .B(GNDI), .C(GNDI), .D(D0), .Z(F0));
+  ffsre2 \SSD_ADC/accum_Z[2].ff_inst ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \SSD_ADC/accum_Z[3].ff_inst ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_35 ( input DI1, DI0, A1, D0, CE, LSR, CLK, output Q0, Q1, F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40013 SLICE_35_K1( .A(A1), .B(GNDI), .C(GNDI), .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40010 SLICE_35_K0( .A(GNDI), .B(GNDI), .C(GNDI), .D(D0), .Z(F0));
+  ffsre2 \SSD_ADC/accum_Z[0].ff_inst ( .D0(DI1_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \SSD_ADC/accum_Z[1].ff_inst ( .D0(DI0_dly), .SP(CE_dly), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_37 ( input DI1, DI0, C1, B0, LSR, CLK, output Q0, Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
+
+  lut40014 SLICE_37_K1( .A(GNDI), .B(GNDI), .C(C1), .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40015 SLICE_37_K0( .A(GNDI), .B(B0), .C(GNDI), .D(GNDI), .Z(F0));
+  ffsre2 \SSD_ADC/box_ave/sample_d1_Z.ff_inst ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \SSD_ADC/box_ave/sample_d2_Z.ff_inst ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40014 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF0F0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40015 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCCCC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_39 ( input DI1, DI0, D1, C1, B1, A1, D0, C0, B0, A0, CE, LSR, CLK, 
+    output Q0, Q1, F0, F1 );
+  wire   DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40016 \SSD_ADC/box_ave/accum_RNO[8] ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40017 \SSD_ADC/box_ave/accum_RNO[6] ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+  ffsre2 \SSD_ADC/box_ave/accum_Z[8].ff_inst ( .D0(DI1_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \SSD_ADC/box_ave/accum_Z[6].ff_inst ( .D0(DI0_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40016 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF0E0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40017 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFB08") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_40 ( input DI1, DI0, D1, C1, B1, A1, D0, C0, B0, A0, CE, LSR, CLK, 
+    output Q0, Q1, F0, F1 );
+  wire   DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40018 \SSD_ADC/box_ave/accum_RNO[4] ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40019 \SSD_ADC/box_ave/accum_RNO[5] ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+  ffsre2 \SSD_ADC/box_ave/accum_Z[4].ff_inst ( .D0(DI1_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \SSD_ADC/box_ave/accum_Z[5].ff_inst ( .D0(DI0_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40018 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xB8AA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40019 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFD08") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_42 ( input DI1, DI0, D1, C1, B1, A1, D0, C0, B0, A0, CE, LSR, CLK, 
+    output Q0, Q1, F0, F1 );
+  wire   DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40020 \SSD_ADC/box_ave/accum_RNO[2] ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40021 \SSD_ADC/box_ave/accum_RNO[3] ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+  ffsre2 \SSD_ADC/box_ave/accum_Z[2].ff_inst ( .D0(DI1_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \SSD_ADC/box_ave/accum_Z[3].ff_inst ( .D0(DI0_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40020 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFB40") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40021 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFD20") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_44 ( input DI1, DI0, D1, C1, B1, A1, D0, C0, B0, A0, CE, LSR, CLK, 
+    output Q0, Q1, F0, F1 );
+  wire   DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40022 \SSD_ADC/box_ave/accum_RNO[0] ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40017 \SSD_ADC/box_ave/accum_RNO[1] ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+  ffsre2 \SSD_ADC/box_ave/accum_Z[0].ff_inst ( .D0(DI1_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \SSD_ADC/box_ave/accum_Z[1].ff_inst ( .D0(DI0_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40022 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCEC4") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_47 ( input DI1, DI0, C1, B1, A1, D0, C0, B0, A0, LSR, CLK, 
+    output Q0, Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
+
+  lut40023 \SSD_ADC/box_ave/count_RNO[0] ( .A(A1), .B(B1), .C(C1), .D(GNDI), 
+    .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40024 \SSD_ADC/box_ave/count_RNO[1] ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+  ffsre2 \SSD_ADC/box_ave/count_Z[0].ff_inst ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \SSD_ADC/box_ave/count_Z[1].ff_inst ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40023 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xC6C6") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40024 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xD2F0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_49 ( input DI1, DI0, A1, D0, LSR, CLK, output Q0, Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
+
+  lut40013 SLICE_49_K1( .A(A1), .B(GNDI), .C(GNDI), .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40010 SLICE_49_K0( .A(GNDI), .B(GNDI), .C(GNDI), .D(D0), .Z(F0));
+  ffsre2 \SSD_ADC/box_ave/raw_data_d1_Z[6].ff_inst ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \SSD_ADC/box_ave/raw_data_d1_Z[7].ff_inst ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_51 ( input DI1, DI0, D1, A0, LSR, CLK, output Q0, Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
+
+  lut40011 SLICE_51_K1( .A(GNDI), .B(GNDI), .C(GNDI), .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40025 SLICE_51_K0( .A(A0), .B(GNDI), .C(GNDI), .D(GNDI), .Z(F0));
+  ffsre2 \SSD_ADC/box_ave/raw_data_d1_Z[4].ff_inst ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \SSD_ADC/box_ave/raw_data_d1_Z[5].ff_inst ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40025 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xAAAA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_53 ( input DI1, DI0, B1, B0, LSR, CLK, output Q0, Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
+
+  lut40026 SLICE_53_K1( .A(GNDI), .B(B1), .C(GNDI), .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40015 SLICE_53_K0( .A(GNDI), .B(B0), .C(GNDI), .D(GNDI), .Z(F0));
+  ffsre2 \SSD_ADC/box_ave/raw_data_d1_Z[2].ff_inst ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \SSD_ADC/box_ave/raw_data_d1_Z[3].ff_inst ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40026 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xCCCC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_55 ( input DI1, DI0, B1, B0, LSR, CLK, output Q0, Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, DI0_dly, LSR_dly;
+
+  lut40026 SLICE_55_K1( .A(GNDI), .B(B1), .C(GNDI), .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40015 SLICE_55_K0( .A(GNDI), .B(B0), .C(GNDI), .D(GNDI), .Z(F0));
+  ffsre2 \SSD_ADC/box_ave/raw_data_d1_Z[0].ff_inst ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+  ffsre2 \SSD_ADC/box_ave/raw_data_d1_Z[1].ff_inst ( .D0(DI0_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (B1 => F1) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_57 ( input DI1, DI0, D1, C1, B1, A1, D0, C0, B0, A0, CE, LSR, CLK, 
+    output Q0, Q1, F0, F1 );
+  wire   DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40027 \SSD_ADC/box_ave/accum_RNO[9] ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40028 \SSD_ADC/box_ave/accum_RNO[10] ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+  ffsre2 \SSD_ADC/box_ave/accum_Z[9].ff_inst ( .D0(DI1_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \SSD_ADC/box_ave/accum_Z[10].ff_inst ( .D0(DI0_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40027 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFE00") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40028 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xF0E0") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_60 ( input DI0, D0, C0, B0, A0, CE, LSR, CLK, output Q0, F0 );
+  wire   DI0_dly, CLK_dly, CE_dly, LSR_dly;
+
+  lut40021 \SSD_ADC/box_ave/accum_RNO[7] ( .A(A0), .B(B0), .C(C0), .D(D0), 
+    .Z(F0));
+  ffsre2 \SSD_ADC/box_ave/accum_Z[7].ff_inst ( .D0(DI0_dly), .SP(CE_dly), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_61 ( input DI1, DI0, C1, D0, CE, LSR, CLK, output Q0, Q1, F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40014 SLICE_61_K1( .A(GNDI), .B(GNDI), .C(C1), .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40010 SLICE_61_K0( .A(GNDI), .B(GNDI), .C(GNDI), .D(D0), .Z(F0));
+  ffsre2 \SSD_ADC/box_ave/ave_data_out_Z[6].ff_inst ( .D0(DI1_dly), 
+    .SP(CE_dly), .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \SSD_ADC/box_ave/ave_data_out_Z[7].ff_inst ( .D0(DI0_dly), 
+    .SP(CE_dly), .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_63 ( input DI1, DI0, C1, A0, CE, LSR, CLK, output Q0, Q1, F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40014 SLICE_63_K1( .A(GNDI), .B(GNDI), .C(C1), .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40025 SLICE_63_K0( .A(A0), .B(GNDI), .C(GNDI), .D(GNDI), .Z(F0));
+  ffsre2 \SSD_ADC/box_ave/ave_data_out_Z[4].ff_inst ( .D0(DI1_dly), 
+    .SP(CE_dly), .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \SSD_ADC/box_ave/ave_data_out_Z[5].ff_inst ( .D0(DI0_dly), 
+    .SP(CE_dly), .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_65 ( input DI1, DI0, C1, B0, CE, LSR, CLK, output Q0, Q1, F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40014 SLICE_65_K1( .A(GNDI), .B(GNDI), .C(C1), .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40015 SLICE_65_K0( .A(GNDI), .B(B0), .C(GNDI), .D(GNDI), .Z(F0));
+  ffsre2 \SSD_ADC/box_ave/ave_data_out_Z[2].ff_inst ( .D0(DI1_dly), 
+    .SP(CE_dly), .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \SSD_ADC/box_ave/ave_data_out_Z[3].ff_inst ( .D0(DI0_dly), 
+    .SP(CE_dly), .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_67 ( input DI1, DI0, D1, B0, CE, LSR, CLK, output Q0, Q1, F0, F1 );
+  wire   GNDI, DI1_dly, CLK_dly, DI0_dly, CE_dly, LSR_dly;
+
+  lut40011 SLICE_67_K1( .A(GNDI), .B(GNDI), .C(GNDI), .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40015 SLICE_67_K0( .A(GNDI), .B(B0), .C(GNDI), .D(GNDI), .Z(F0));
+  ffsre2 \SSD_ADC/box_ave/ave_data_out_Z[0].ff_inst ( .D0(DI1_dly), 
+    .SP(CE_dly), .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  ffsre2 \SSD_ADC/box_ave/ave_data_out_Z[1].ff_inst ( .D0(DI0_dly), 
+    .SP(CE_dly), .CK(CLK_dly), .LSR(LSR_dly), .Q(Q0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q0) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, DI0, 0:0:0, 0:0:0,,,, CLK_dly, DI0_dly);
+    $setuphold (posedge CLK, CE, 0:0:0, 0:0:0,,,, CLK_dly, CE_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module SLICE_71 ( input D1, C1, B1, A1, D0, C0, B0, A0, output F0, F1 );
+
+  lut40029 \SSD_ADC/DDRInst0_RNIVGV55 ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40030 \SSD_ADC/sigma_RNICBTB1[0] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40029 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x4FCF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40030 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x3111") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_73 ( input C1, B1, D0, C0, B0, A0, output F0, F1 );
+  wire   GNDI;
+
+  lut40031 \SSD_ADC/box_ave/count_RNIO53M[1] ( .A(GNDI), .B(B1), .C(C1), 
+    .D(GNDI), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40032 \SSD_ADC/box_ave/sample_d2_RNILAFF_cZ ( .A(A0), .B(B0), .C(C0), 
+    .D(D0), .Z(F0));
+
+  specify
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40031 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x3030") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40032 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x0100") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_75 ( input D0, C0, B0, A0, output F0 );
+
+  lut40033 \SSD_ADC/rollover_RNO_1 ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40033 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_76 ( input DI1, D1, C1, B1, A1, D0, C0, B0, A0, LSR, CLK, output 
+    Q1, F0, F1 );
+  wire   VCCI, DI1_dly, CLK_dly, LSR_dly;
+
+  lut40034 \SSD_ADC/rollover_RNO ( .A(A1), .B(B1), .C(C1), .D(D1), .Z(F1));
+  lut40035 \SSD_ADC/rollover_RNO_0 ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+  ffsre2 \SSD_ADC/rollover_Z.ff_inst ( .D0(DI1_dly), .SP(VCCI), .CK(CLK_dly), 
+    .LSR(LSR_dly), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40034 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40035 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_77 ( input DI1, D1, C1, B1, A1, D0, C0, LSR, CLK, output Q1, F0, 
+    F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, LSR_dly;
+
+  lut40036 \SSD_ADC/box_ave/count_RNO[2] ( .A(A1), .B(B1), .C(C1), .D(D1), 
+    .Z(F1));
+  lut40037 \SSD_ADC/box_ave/count_RNI7N7D[2] ( .A(GNDI), .B(GNDI), .C(C0), 
+    .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+  ffsre2 \SSD_ADC/box_ave/count_Z[2].ff_inst ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (C1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (A1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40036 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x6AAA") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40037 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x000F") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_78 ( input DI1, D1, B1, D0, B0, LSR, CLK, output Q1, F0, F1 );
+  wire   GNDI, VCCI, DI1_dly, CLK_dly, LSR_dly;
+
+  lut40038 SLICE_78_K1( .A(GNDI), .B(B1), .C(GNDI), .D(D1), .Z(F1));
+  gnd DRIVEGND( .PWR0(GNDI));
+  lut40039 \SSD_ADC/box_ave/sample_d2_RNIFK72 ( .A(GNDI), .B(B0), .C(GNDI), 
+    .D(D0), .Z(F0));
+  ffsre2 \SSD_ADC/box_ave/result_valid_Z.ff_inst ( .D0(DI1_dly), .SP(VCCI), 
+    .CK(CLK_dly), .LSR(LSR_dly), .Q(Q1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (D1 => F1) = (0:0:0,0:0:0);
+    (B1 => F1) = (0:0:0,0:0:0);
+    (D0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (LSR => Q1) = (0:0:0,0:0:0);
+    (CLK => Q1) = (0:0:0,0:0:0);
+    $setuphold (posedge CLK, DI1, 0:0:0, 0:0:0,,,, CLK_dly, DI1_dly);
+    $setuphold (posedge CLK, LSR, 0:0:0, 0:0:0,,,, CLK_dly, LSR_dly);
+  endspecify
+
+endmodule
+
+module lut40038 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x00CC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module lut40039 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x00CC") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_79 ( input D0, C0, B0, A0, output F0 );
+
+  lut40035 \SSD_ADC/sigma_RNIMT6N1[4] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module SLICE_80 ( input D0, C0, B0, A0, output F0 );
+
+  lut40040 \SSD_ADC/sigma_RNIMT6N1[2] ( .A(A0), .B(B0), .C(C0), .D(D0), .Z(F0));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+    (C0 => F0) = (0:0:0,0:0:0);
+    (B0 => F0) = (0:0:0,0:0:0);
+    (A0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40040 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x8000") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_81 ( input B0, output F0 );
+  wire   GNDI;
+
+  lut40041 i_rst_in_ibuf_RNISFP( .A(GNDI), .B(B0), .C(GNDI), .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (B0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut40041 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x3333") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SLICE_82 ( output F0 );
+  wire   GNDI;
+
+  lut40042 \o_digital_out_obuf[0].vhi_inst ( .A(GNDI), .B(GNDI), .C(GNDI), 
+    .D(GNDI), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+  endspecify
+
+endmodule
+
+module lut40042 ( input A, B, C, D, output Z );
+
+  LUT4 #("0xFFFF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module SSD_ADC_DDRInst0 ( input PADDI, INCLK, output DI0 );
+  wire   GNDI, VCCI, PADDI_dly, INCLK_dly;
+
+  IOL_B_B \SSD_ADC/DDRInst0 ( .PADDI(PADDI_dly), .DO1(GNDI), .DO0(GNDI), 
+    .CE(VCCI), .IOLTO(GNDI), .HOLD(GNDI), .INCLK(INCLK_dly), .OUTCLK(GNDI), 
+    .PADDO(), .PADDT(), .DI1(), .DI0(DI0));
+  gnd DRIVEGND( .PWR0(GNDI));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (INCLK => DI0) = (0:0:0,0:0:0);
+    $setuphold (posedge INCLK, PADDI, 0:0:0, 0:0:0,,,, INCLK_dly, PADDI_dly);
+  endspecify
+
+endmodule
+
+module IOL_B_B ( input PADDI, DO1, DO0, CE, IOLTO, HOLD, INCLK, OUTCLK, 
+    output PADDO, PADDT, DI1, DI0 );
+
+  IOL_B INST10( .PADDI(PADDI), .DO1(DO1), .DO0(DO0), .CE(CE), .IOLTO(IOLTO), 
+    .HOLD(HOLD), .INCLK(INCLK), .OUTCLK(OUTCLK), .PADDO(PADDO), .PADDT(PADDT), 
+    .DI1(DI1), .DI0(DI0));
+  defparam INST10.DDROUT = "NO";
+  defparam INST10.LATCHIN = "NONE_DDR";
+endmodule
+
+module o_sample_rdy ( input PADDO, output o_sample_rdy );
+  wire   VCCI;
+
+  BB_B_B \o_sample_rdy_obuf.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), 
+    .B(o_sample_rdy));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => o_sample_rdy) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module BB_B_B ( input T_N, I, output O, inout B );
+
+  BB_B INST10( .T_N(T_N), .I(I), .O(O), .B(B));
+endmodule
+
+module o_analog_out ( input PADDO, output o_analog_out );
+  wire   VCCI;
+
+  BB_B_B \o_analog_out_obuf.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), 
+    .B(o_analog_out));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => o_analog_out) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module o_digital_out_7_ ( input PADDO, output odigitalout7 );
+  wire   VCCI;
+
+  BB_B_B \o_digital_out_obuf[7].bb_inst ( .T_N(VCCI), .I(PADDO), .O(), 
+    .B(odigitalout7));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => odigitalout7) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module o_digital_out_6_ ( input PADDO, output odigitalout6 );
+  wire   VCCI;
+
+  BB_B_B \o_digital_out_obuf[6].bb_inst ( .T_N(VCCI), .I(PADDO), .O(), 
+    .B(odigitalout6));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => odigitalout6) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module o_digital_out_5_ ( input PADDO, output odigitalout5 );
+  wire   VCCI;
+
+  BB_B_B \o_digital_out_obuf[5].bb_inst ( .T_N(VCCI), .I(PADDO), .O(), 
+    .B(odigitalout5));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => odigitalout5) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module o_digital_out_4_ ( input PADDO, output odigitalout4 );
+  wire   VCCI;
+
+  BB_B_B \o_digital_out_obuf[4].bb_inst ( .T_N(VCCI), .I(PADDO), .O(), 
+    .B(odigitalout4));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => odigitalout4) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module o_digital_out_3_ ( input PADDO, output odigitalout3 );
+  wire   VCCI;
+
+  BB_B_B \o_digital_out_obuf[3].bb_inst ( .T_N(VCCI), .I(PADDO), .O(), 
+    .B(odigitalout3));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => odigitalout3) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module o_digital_out_2_ ( input PADDO, output odigitalout2 );
+  wire   VCCI;
+
+  BB_B_B \o_digital_out_obuf[2].bb_inst ( .T_N(VCCI), .I(PADDO), .O(), 
+    .B(odigitalout2));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => odigitalout2) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module o_digital_out_1_ ( input PADDO, output odigitalout1 );
+  wire   VCCI;
+
+  BB_B_B \o_digital_out_obuf[1].bb_inst ( .T_N(VCCI), .I(PADDO), .O(), 
+    .B(odigitalout1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => odigitalout1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module o_digital_out_0_ ( input PADDO, output odigitalout0 );
+  wire   VCCI;
+
+  BB_B_B \o_digital_out_obuf[0].bb_inst ( .T_N(VCCI), .I(PADDO), .O(), 
+    .B(odigitalout0));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => odigitalout0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module i_analog_cmp ( output PADDI, input i_analog_cmp );
+  wire   GNDI;
+
+  BB_B_B \i_analog_cmp_ibuf.bb_inst ( .T_N(GNDI), .I(GNDI), .O(PADDI), 
+    .B(i_analog_cmp));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (i_analog_cmp => PADDI) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module i_rst_in ( output PADDI, input i_rst_in );
+  wire   GNDI;
+
+  BB_B_B \i_rst_in_ibuf.bb_inst ( .T_N(GNDI), .I(GNDI), .O(PADDI), 
+    .B(i_rst_in));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (i_rst_in => PADDI) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module i_clk_in ( output PADDI, input i_clk_in );
+  wire   GNDI;
+
+  BB_B_B \i_clk_in_ibuf.bb_inst ( .T_N(GNDI), .I(GNDI), .O(PADDI), 
+    .B(i_clk_in));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (i_clk_in => PADDI) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule

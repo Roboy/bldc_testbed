@@ -1,0 +1,30 @@
+---------------------------------------------------
+Report for cell ADC_top
+   Instance path: ADC_top
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                 IOLGC	       1.00        100.0
+                                  LUT4	     101.00        100.0
+                                 IOBUF	         13        100.0
+                                PFUREG	         63        100.0
+SUB MODULES
+                                  cell	      count    LUT4 Usage(%)
+              sigmadelta_adc_8s_10s_3s	          1        70.3
+---------------------------------------------------
+Report for cell sigmadelta_adc_8s_10s_3s
+   Instance path: ADC_top/SSD_ADC
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                 IOLGC	       1.00        100.0
+                                  LUT4	      71.00        70.3
+                                PFUREG	         63        100.0
+SUB MODULES
+                                  cell	      count    LUT4 Usage(%)
+                         box_ave_8s_3s	          1        29.7
+---------------------------------------------------
+Report for cell box_ave_8s_3s
+   Instance path: ADC_top/SSD_ADC/box_ave
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	      30.00        29.7
+                                PFUREG	         33        52.4

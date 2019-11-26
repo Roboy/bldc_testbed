@@ -1,0 +1,3 @@
+[submodule "kicad_db"]
+	path = kicad_db
+	url = https://github.com/Roboy/kicad_db

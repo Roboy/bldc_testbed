@@ -1,0 +1,207 @@
+  Lattice Mapping Report File for Design Module 'ice40up_simple_adc_impl_1'
+
+Target Vendor:        LATTICE
+Target Device:        iCE40UP5KSG48
+Target Performance:   High-Performance_1.2V
+
+Mapper:    version Radiant (64-bit) 1.0.0.350.6
+Mapped on: Mon Sep 24 15:06:15 2018
+
+Design Information
+------------------
+
+Command line:   map ice40up_simple_adc_impl_1_syn.udb D:/Radiant_porting/ADC_del
+     taSigma/SimpleSigmaDeltaADCSourceCode/project/ice40up/verilog/ice40up_veril
+     og.pdc -o ice40up_simple_adc_impl_1.udb -gui
+
+Design Summary
+--------------
+
+   Number of slice registers:  63 out of  5280 (1%)
+   Number of I/O registers:      0 out of   117 (0%)
+   Number of LUT4s:           101 out of  5280 (2%)
+      Number of logic LUT4s:              37
+      Number of inserted feedthru LUT4s:  27
+      Number of replicated LUT4s:          1
+      Number of ripple logic:             18 (36 LUT4s)
+   Number of IO sites used:   13 out of 39 (33%)
+      Number of IO sites used for general PIOs: 13
+      Number of IO sites used for I3Cs: 0 out of 2 (0%)
+      Number of IO sites used for PIOs+I3Cs: 13 out of 36 (36%)
+      (note: If I3C is not used, its site can be used as general PIO)
+      Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
+   Number of DSPs:             0 out of 8 (0%)
+   Number of I2Cs:             0 out of 2 (0%)
+   Number of High Speed OSCs:  0 out of 1 (0%)
+   Number of Low Speed OSCs:   0 out of 1 (0%)
+   Number of RGB PWM:          0 out of 1 (0%)
+   Number of RGB Drivers:      0 out of 1 (0%)
+   Number of SCL FILTERs:      0 out of 2 (0%)
+   Number of SRAMs:            0 out of 4 (0%)
+   Number of WARMBOOTs:        0 out of 1 (0%)
+   Number of SPIs:             0 out of 2 (0%)
+   Number of EBRs:             0 out of 30 (0%)
+   Number of PLLs:             0 out of 1 (0%)
+   Number of Clocks:  1
+      Net i_clk_in_c: 60 loads, 60 rising, 0 falling (Driver: Port i_clk_in)
+   Number of Clock Enables:  4
+      Net SSD_ADC/sigmae_0_i: 10 loads, 10 SLICEs
+      Net SSD_ADC/rollover: 8 loads, 8 SLICEs
+      Net SSD_ADC/box_ave/accumulate: 11 loads, 11 SLICEs
+      Net SSD_ADC/box_ave/latch_result: 8 loads, 8 SLICEs
+   Number of LSRs:  1
+      Net i_rst_in_c_i: 59 loads, 59 SLICEs
+   Top 10 highest fanout non-clock nets:
+      Net i_rst_in_c_i: 59 loads
+      Net SSD_ADC/rollover: 20 loads
+      Net SSD_ADC/box_ave/count[0]: 15 loads
+      Net SSD_ADC/box_ave/accumulate: 12 loads
+      Net SSD_ADC/sigmae_0_i: 10 loads
+      Net SSD_ADC/box_ave/accum10_0: 8 loads
+      Net SSD_ADC/box_ave/count[1]: 8 loads
+      Net SSD_ADC/box_ave/latch_result: 8 loads
+
+                                    Page 1
+
+
+
+
+
+Design Summary (cont)
+---------------------
+      Net SSD_ADC/box_ave/count[2]: 6 loads
+      Net SSD_ADC/box_ave/sample_d1: 5 loads
+
+
+
+
+   Number of warnings:  0
+   Number of errors:    0
+
+Design Errors/Warnings
+----------------------
+
+   No errors or warnings present.
+
+IO (PIO) Attributes
+-------------------
+
++---------------------+-----------+-----------+
+| IO Name             | Direction | Levelmode |
+|                     |           |  IO_TYPE  |
++---------------------+-----------+-----------+
+| o_sample_rdy        | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| o_analog_out        | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| o_digital_out[7]    | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| o_digital_out[6]    | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| o_digital_out[5]    | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| o_digital_out[4]    | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| o_digital_out[3]    | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| o_digital_out[2]    | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| o_digital_out[1]    | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| o_digital_out[0]    | OUTPUT    | LVCMOS33  |
++---------------------+-----------+-----------+
+| i_analog_cmp        | INPUT     | LVDSE     |
++---------------------+-----------+-----------+
+| i_rst_in            | INPUT     | LVCMOS33  |
++---------------------+-----------+-----------+
+| i_clk_in            | INPUT     | LVCMOS25  |
++---------------------+-----------+-----------+
+
+Removed logic
+-------------
+
+Signal GND undriven or does not drive anything - clipped.
+Signal SSD_ADC/box_ave/un5_accum_cry_0_0.S0 undriven or does not drive anything
+     - clipped.
+Signal SSD_ADC/box_ave/un5_accum_cry_0_0.CIN undriven or does not drive anything
+     - clipped.
+Signal SSD_ADC/box_ave/un5_accum_cry_9_0.COUT undriven or does not drive
+
+                                    Page 2
+
+
+
+
+
+Removed logic (cont)
+--------------------
+     anything - clipped.
+Signal SSD_ADC/counter_cry_0[0].S0 undriven or does not drive anything -
+     clipped.
+Signal SSD_ADC/counter_cry_0[0].CIN undriven or does not drive anything -
+     clipped.
+Signal SSD_ADC/counter_s_0[9].COUT undriven or does not drive anything -
+     clipped.
+Signal SSD_ADC/counter_s_0[9].S1 undriven or does not drive anything - clipped.
+Signal SSD_ADC/sigma_cry_0[0].S0 undriven or does not drive anything - clipped.
+Signal SSD_ADC/sigma_cry_0[0].CIN undriven or does not drive anything - clipped.
+Signal SSD_ADC/sigma_s_0[9].COUT undriven or does not drive anything - clipped.
+Signal SSD_ADC/sigma_s_0[9].S1 undriven or does not drive anything - clipped.
+Block GND_cZ was optimized away.
+
+ASIC Components
+---------------
+
+Instance Name: SSD_ADC.DDRInst0
+         Type: IOLOGIC
+
+Run Time and Memory Usage
+-------------------------
+
+   Total CPU Time: 0 secs
+   Total REAL Time: 0 secs
+   Peak Memory Usage: 57 MB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    Page 3
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995
+     AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent
+     Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems
+     All rights reserved.
+Copyright (c) 2002-2018 Lattice Semiconductor
+     Corporation,  All rights reserved.

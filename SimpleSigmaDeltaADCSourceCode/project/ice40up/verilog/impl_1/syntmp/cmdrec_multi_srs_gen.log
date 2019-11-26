@@ -1,0 +1,7 @@
+C:\lscc\radiant\1.0\synpbase\bin64\syn_nfilter.exe  -link  -top  ADC_top  -multisrs  D:\Radiant_porting\ADC_deltaSigma\SimpleSigmaDeltaADCSourceCode\project\ice40up\verilog\impl_1\synwork\ice40up_simple_adc_impl_1_comp.srs  -osyn  D:\Radiant_porting\ADC_deltaSigma\SimpleSigmaDeltaADCSourceCode\project\ice40up\verilog\impl_1\synwork\ice40up_simple_adc_impl_1_mult.srs  -log  D:\Radiant_porting\ADC_deltaSigma\SimpleSigmaDeltaADCSourceCode\project\ice40up\verilog\impl_1\synlog\ice40up_simple_adc_impl_1_multi_srs_gen.srr 
+relcom:C:\lscc\radiant\1.0\synpbase\bin64\syn_nfilter.exe -link -top ADC_top -multisrs ..\synwork\ice40up_simple_adc_impl_1_comp.srs -osyn ..\synwork\ice40up_simple_adc_impl_1_mult.srs -log ..\synlog\ice40up_simple_adc_impl_1_multi_srs_gen.srr
+rc:0 success:1 runtime:1
+file:..\synwork\ice40up_simple_adc_impl_1_comp.srs|io:i|time:1537826767|size:7044|exec:0|csum:39AA0A186083DC198591655BF0922BA3
+file:..\synwork\ice40up_simple_adc_impl_1_mult.srs|io:o|time:1537826769|size:2548|exec:0|csum:
+file:..\synlog\ice40up_simple_adc_impl_1_multi_srs_gen.srr|io:o|time:1537826769|size:409|exec:0|csum:
+file:C:\lscc\radiant\1.0\synpbase\bin64\syn_nfilter.exe|io:i|time:1513353476|size:8865792|exec:1|csum:8193D59C4FC68D2D01C64740EE074FF8

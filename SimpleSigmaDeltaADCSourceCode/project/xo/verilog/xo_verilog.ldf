@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BaliProject version="3.2" title="xo_verilog" device="LCMXO2280C-5FT256C" default_implementation="xo_verilog">
+    <Options/>
+    <Implementation title="xo_verilog" dir="xo_verilog" description="xo_verilog" synthesis="lse" default_strategy="Strategy1">
+        <Options def_top="ADC_top"/>
+        <Source name="../../../source/verilog/adc_top.v" type="Verilog" type_short="Verilog">
+            <Options top_module="ADC_top"/>
+        </Source>
+        <Source name="../../../source/verilog/box_ave.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../source/verilog/sigmadelta_adc.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="xo_verilog.lpf" type="Logic Preference" type_short="LPF">
+            <Options/>
+        </Source>
+    </Implementation>
+    <Strategy name="Strategy1" file="xo_verilog_lse1.sty"/>
+</BaliProject>

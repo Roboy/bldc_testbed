@@ -1,0 +1,18 @@
+@N: CG364 :"C:\lscc\radiant\1.0\synpbase\lib\generic\ice40up.v":348:7:348:11|Synthesizing module IOL_B in library work.
+@N: CG364 :"D:\Radiant_porting\ADC_deltaSigma\SimpleSigmaDeltaADCSourceCode\source\verilog\radiant\box_ave.v":62:7:62:13|Synthesizing module box_ave in library work.
+
+	ADC_WIDTH=32'b00000000000000000000000000001000
+	LPF_DEPTH_BITS=32'b00000000000000000000000000000011
+   Generated name = box_ave_8s_3s
+@N: CG364 :"D:\Radiant_porting\ADC_deltaSigma\SimpleSigmaDeltaADCSourceCode\source\verilog\radiant\sigmadelta_adc_ice40.v":62:7:62:20|Synthesizing module sigmadelta_adc in library work.
+
+	ADC_WIDTH=32'b00000000000000000000000000001000
+	ACCUM_BITS=32'b00000000000000000000000000001010
+	LPF_DEPTH_BITS=32'b00000000000000000000000000000011
+   Generated name = sigmadelta_adc_8s_10s_3s
+@W: CG781 :"D:\Radiant_porting\ADC_deltaSigma\SimpleSigmaDeltaADCSourceCode\source\verilog\radiant\sigmadelta_adc_ice40.v":124:10:124:10|Input DO1 on instance DDRInst0 is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
+@W: CG781 :"D:\Radiant_porting\ADC_deltaSigma\SimpleSigmaDeltaADCSourceCode\source\verilog\radiant\sigmadelta_adc_ice40.v":125:10:125:10|Input DO0 on instance DDRInst0 is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
+@W: CG781 :"D:\Radiant_porting\ADC_deltaSigma\SimpleSigmaDeltaADCSourceCode\source\verilog\radiant\sigmadelta_adc_ice40.v":127:10:127:10|Input IOLTO on instance DDRInst0 is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
+@W: CG781 :"D:\Radiant_porting\ADC_deltaSigma\SimpleSigmaDeltaADCSourceCode\source\verilog\radiant\sigmadelta_adc_ice40.v":128:10:128:10|Input HOLD on instance DDRInst0 is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
+@W: CG781 :"D:\Radiant_porting\ADC_deltaSigma\SimpleSigmaDeltaADCSourceCode\source\verilog\radiant\sigmadelta_adc_ice40.v":130:10:130:10|Input OUTCLK on instance DDRInst0 is undriven; assigning to 0.  Simulation mismatch possible. Either assign the input or remove the declaration. 
+@N: CG364 :"D:\Radiant_porting\ADC_deltaSigma\SimpleSigmaDeltaADCSourceCode\source\verilog\radiant\adc_top.v":58:7:58:13|Synthesizing module ADC_top in library work.

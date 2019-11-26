@@ -1,0 +1,65 @@
+# Mon Sep 24 15:06:09 2018
+
+Synopsys Lattice Technology Pre-mapping, Version maplat, Build 1868R, Built Nov 13 2017 02:40:05
+Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+Product Version M-2017.03LR-SP1-1
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 100MB)
+
+@A: MF827 |No constraint file specified.
+@L: D:\Radiant_porting\ADC_deltaSigma\SimpleSigmaDeltaADCSourceCode\project\ice40up\verilog\impl_1\ice40up_simple_adc_impl_1_scck.rpt 
+Printing clock  summary report in "D:\Radiant_porting\ADC_deltaSigma\SimpleSigmaDeltaADCSourceCode\project\ice40up\verilog\impl_1\ice40up_simple_adc_impl_1_scck.rpt" file 
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 102MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 102MB)
+
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 102MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 104MB)
+
+syn_allowed_resources : blockrams=30  set on top level netlist ADC_top
+
+Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 134MB)
+
+
+
+Clock Summary
+******************
+
+          Start                Requested     Requested     Clock        Clock                     Clock
+Level     Clock                Frequency     Period        Type         Group                     Load 
+-------------------------------------------------------------------------------------------------------
+0 -       System               1.0 MHz       1000.000      system       system_clkgroup           0    
+                                                                                                       
+0 -       ADC_top|i_clk_in     146.0 MHz     6.849         inferred     Autoconstr_clkgroup_0     63   
+=======================================================================================================
+
+@W: MT530 :"d:\radiant_porting\adc_deltasigma\simplesigmadeltaadcsourcecode\source\verilog\radiant\box_ave.v":162:0:162:5|Found inferred clock ADC_top|i_clk_in which controls 63 sequential elements including SSD_ADC.box_ave.ave_data_out[7:0]. This clock has no specified timing constraint which may adversely impact design performance. 
+
+Finished Pre Mapping Phase.
+@N: BN225 |Writing default property annotation file D:\Radiant_porting\ADC_deltaSigma\SimpleSigmaDeltaADCSourceCode\project\ice40up\verilog\impl_1\ice40up_simple_adc_impl_1.sap.
+
+Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 134MB)
+
+
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 134MB)
+
+None
+None
+
+Finished constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 134MB)
+
+Pre-mapping successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 48MB peak: 134MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Mon Sep 24 15:06:10 2018
+
+###########################################################]

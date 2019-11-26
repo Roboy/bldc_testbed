@@ -1,0 +1,2 @@
+@W: MT246 :"d:\radiant_porting\adc_deltasigma\simplesigmadeltaadcsourcecode\source\verilog\radiant\sigmadelta_adc_ice40.v":122:3:122:10|Blackbox IOL_B is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
+@W: MT420 |Found inferred clock ADC_top|i_clk_in with period 3.33ns. Please declare a user-defined clock on object "p:i_clk_in"

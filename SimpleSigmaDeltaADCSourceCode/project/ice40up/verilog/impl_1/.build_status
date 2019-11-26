@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BuildStatus>
+    <Strategy name="Strategy1">
+        <Milestone name="Export" build_result="2" build_time="1537826789">
+            <Task name="Bitgen" build_result="2" update_result="0" update_time="1537826789"/>
+            <Task name="TimingSimFileVlg" build_result="2" update_result="0" update_time="1537826790"/>
+        </Milestone>
+        <Milestone name="Map" build_result="2" build_time="1537826775">
+            <Task name="Map" build_result="2" update_result="0" update_time="1537826775"/>
+            <Task name="MapTrace" build_result="2" update_result="0" update_time="1537826776"/>
+        </Milestone>
+        <Milestone name="PAR" build_result="2" build_time="1537826786">
+            <Task name="PAR" build_result="2" update_result="0" update_time="1537826786"/>
+            <Task name="PARTrace" build_result="2" update_result="0" update_time="1537826787"/>
+            <Task name="IOTiming" build_result="0" update_result="3" update_time="0"/>
+        </Milestone>
+        <Milestone name="Synthesis" build_result="2" build_time="1537826774">
+            <Task name="Synplify_Synthesis" build_result="2" update_result="0" update_time="1537826774"/>
+        </Milestone>
+        <Report name="ice40up_simple_adc_impl_1.bgn" last_build_time="1537826789" last_build_size="976"/>
+        <Report name="ice40up_simple_adc_impl_1.bin" last_build_time="1537826789" last_build_size="104156"/>
+        <Report name="ice40up_simple_adc_impl_1.lsedata" last_build_time="1537826547" last_build_size="74842"/>
+        <Report name="ice40up_simple_adc_impl_1.tw1.html" last_build_time="1537826776" last_build_size="15366"/>
+        <Report name="ice40up_simple_adc_impl_1.twr.html" last_build_time="1537826787" last_build_size="15734"/>
+        <Report name="ice40up_simple_adc_impl_1.udb::log" last_build_time="1537826774" last_build_size="67610"/>
+        <Report name="ice40up_simple_adc_impl_1.udb::phy_par" last_build_time="1537826786" last_build_size="148420"/>
+        <Report name="ice40up_simple_adc_impl_1.udb::rtl" last_build_time="1537826547" last_build_size="208995"/>
+        <Report name="ice40up_simple_adc_impl_1_map.udb" last_build_time="1537826775" last_build_size="138236"/>
+        <Report name="ice40up_simple_adc_impl_1_vo.sdf" last_build_time="1537826790" last_build_size="71482"/>
+        <Report name="ice40up_simple_adc_impl_1_vo.vo" last_build_time="1537826790" last_build_size="92036"/>
+    </Strategy>
+</BuildStatus>

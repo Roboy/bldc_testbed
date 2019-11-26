@@ -1,0 +1,117 @@
+#OPTIONS:"|-mixedhdl|-modhint|D:\\Radiant_porting\\ADC_deltaSigma\\SimpleSigmaDeltaADCSourceCode\\project\\ice40up\\verilog\\impl_1\\synwork\\_verilog_hintfile|-top|ADC_top|-layerid|0|-orig_srs|D:\\Radiant_porting\\ADC_deltaSigma\\SimpleSigmaDeltaADCSourceCode\\project\\ice40up\\verilog\\impl_1\\synwork\\ice40up_simple_adc_impl_1_comp.srs|-prodtype|synplify_pro|-primux|-fixsmult|-infer_seqShift|-ice|-sdff_counter|-nram|-divnmod|-nostructver|-I|D:\\Radiant_porting\\ADC_deltaSigma\\SimpleSigmaDeltaADCSourceCode\\project\\ice40up\\verilog|-I|D:\\Radiant_porting\\ADC_deltaSigma\\SimpleSigmaDeltaADCSourceCode\\project\\ice40up\\verilog\\impl_1\\|-I|C:\\lscc\\radiant\\1.0\\synpbase\\lib|-v2001|-devicelib|C:\\lscc\\radiant\\1.0\\synpbase\\lib\\generic\\ice40up.v|-encrypt|-pro|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-D_MULTIPLE_FILE_COMPILATION_UNIT_|-lib|work|-lib|work|-lib|work|-lib|work"
+#CUR:"C:\\lscc\\radiant\\1.0\\synpbase\\bin64\\c_ver.exe":1513353474
+#CUR:"D:\\Radiant_porting\\ADC_deltaSigma\\SimpleSigmaDeltaADCSourceCode\\project\\ice40up\\verilog\\impl_1\\synwork\\_verilog_hintfile":1537826766
+#CUR:"C:\\lscc\\radiant\\1.0\\synpbase\\lib\\generic\\ice40up.v":1513353490
+#CUR:"C:\\lscc\\radiant\\1.0\\synpbase\\lib\\vlog\\hypermods.v":1513353510
+#CUR:"C:\\lscc\\radiant\\1.0\\synpbase\\lib\\vlog\\umr_capim.v":1513353510
+#CUR:"C:\\lscc\\radiant\\1.0\\synpbase\\lib\\vlog\\scemi_objects.v":1513353510
+#CUR:"C:\\lscc\\radiant\\1.0\\synpbase\\lib\\vlog\\scemi_pipes.svh":1513353510
+#CUR:"C:\\lscc\\radiant\\1.0\\ip\\pmi\\pmi.v":1517537440
+#CUR:"C:\\lscc\\radiant\\1.0\\ip\\pmi\\pmi_add.v":1510103546
+#CUR:"C:\\lscc\\radiant\\1.0\\ip\\pmi\\../common/adder/rtl/lscc_adder.v":1509782142
+#CUR:"C:\\lscc\\radiant\\1.0\\ip\\pmi\\pmi_complex_mult.v":1510103546
+#CUR:"C:\\lscc\\radiant\\1.0\\ip\\pmi\\../common/complex_mult/rtl/lscc_complex_mult.v":1509782143
+#CUR:"C:\\lscc\\radiant\\1.0\\ip\\pmi\\pmi_dsp.v":1515569773
+#CUR:"C:\\lscc\\radiant\\1.0\\ip\\pmi\\pmi_mac.v":1510103547
+#CUR:"C:\\lscc\\radiant\\1.0\\ip\\pmi\\../common/mult_accumulate/rtl/lscc_mult_accumulate.v":1510017480
+#CUR:"C:\\lscc\\radiant\\1.0\\ip\\pmi\\pmi_multaddsub.v":1510103546
+#CUR:"C:\\lscc\\radiant\\1.0\\ip\\pmi\\../common/mult_add_sub/rtl/lscc_mult_add_sub.v":1509782144
+#CUR:"C:\\lscc\\radiant\\1.0\\ip\\pmi\\pmi_mult.v":1510103546
+#CUR:"C:\\lscc\\radiant\\1.0\\ip\\pmi\\../common/multiplier/rtl/lscc_multiplier.v":1509782145
+#CUR:"C:\\lscc\\radiant\\1.0\\ip\\pmi\\pmi_ram_dp.v":1509782147
+#CUR:"C:\\lscc\\radiant\\1.0\\ip\\pmi\\../common/ram_dp/rtl/lscc_ram_dp.v":1510192101
+#CUR:"C:\\lscc\\radiant\\1.0\\ip\\pmi\\pmi_ram_dq.v":1509782148
+#CUR:"C:\\lscc\\radiant\\1.0\\ip\\pmi\\../common/ram_dq/rtl/lscc_ram_dq.v":1510192101
+#CUR:"C:\\lscc\\radiant\\1.0\\ip\\pmi\\pmi_sub.v":1510103546
+#CUR:"C:\\lscc\\radiant\\1.0\\ip\\pmi\\../common/subtractor/rtl/lscc_subtractor.v":1509782146
+#CUR:"D:\\Radiant_porting\\ADC_deltaSigma\\SimpleSigmaDeltaADCSourceCode\\source\\verilog\\radiant\\adc_top.v":1537460146
+#CUR:"D:\\Radiant_porting\\ADC_deltaSigma\\SimpleSigmaDeltaADCSourceCode\\source\\verilog\\radiant\\sigmadelta_adc_ice40.v":1536259146
+#CUR:"D:\\Radiant_porting\\ADC_deltaSigma\\SimpleSigmaDeltaADCSourceCode\\source\\verilog\\radiant\\box_ave.v":1462971718
+0			"C:\lscc\radiant\1.0\ip\pmi\pmi.v" verilog
+1		*	"C:\lscc\radiant\1.0\ip\pmi\pmi_add.v" verilog
+2		*	"C:\lscc\radiant\1.0\ip\pmi\../common/adder/rtl\lscc_adder.v" verilog
+3		*	"C:\lscc\radiant\1.0\ip\pmi\pmi_complex_mult.v" verilog
+4		*	"C:\lscc\radiant\1.0\ip\pmi\../common/complex_mult/rtl\lscc_complex_mult.v" verilog
+5		*	"C:\lscc\radiant\1.0\ip\pmi\pmi_dsp.v" verilog
+6		*	"C:\lscc\radiant\1.0\ip\pmi\pmi_mac.v" verilog
+7		*	"C:\lscc\radiant\1.0\ip\pmi\../common/mult_accumulate/rtl\lscc_mult_accumulate.v" verilog
+8		*	"C:\lscc\radiant\1.0\ip\pmi\pmi_multaddsub.v" verilog
+9		*	"C:\lscc\radiant\1.0\ip\pmi\../common/mult_add_sub/rtl\lscc_mult_add_sub.v" verilog
+10		*	"C:\lscc\radiant\1.0\ip\pmi\pmi_mult.v" verilog
+11		*	"C:\lscc\radiant\1.0\ip\pmi\../common/multiplier/rtl\lscc_multiplier.v" verilog
+12		*	"C:\lscc\radiant\1.0\ip\pmi\pmi_ram_dp.v" verilog
+13		*	"C:\lscc\radiant\1.0\ip\pmi\../common/ram_dp/rtl\lscc_ram_dp.v" verilog
+14		*	"C:\lscc\radiant\1.0\ip\pmi\pmi_ram_dq.v" verilog
+15		*	"C:\lscc\radiant\1.0\ip\pmi\../common/ram_dq/rtl\lscc_ram_dq.v" verilog
+16		*	"C:\lscc\radiant\1.0\ip\pmi\pmi_sub.v" verilog
+17		*	"C:\lscc\radiant\1.0\ip\pmi\../common/subtractor/rtl\lscc_subtractor.v" verilog
+18			"D:\Radiant_porting\ADC_deltaSigma\SimpleSigmaDeltaADCSourceCode\source\verilog\radiant\adc_top.v" verilog
+19			"D:\Radiant_porting\ADC_deltaSigma\SimpleSigmaDeltaADCSourceCode\source\verilog\radiant\sigmadelta_adc_ice40.v" verilog
+20			"D:\Radiant_porting\ADC_deltaSigma\SimpleSigmaDeltaADCSourceCode\source\verilog\radiant\box_ave.v" verilog
+#Dependency Lists(Uses List)
+0 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1
+1 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 0
+2 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 1 0
+3 17 16 15 14 13 12 11 10 9 8 7 6 5 4 2 1 0
+4 17 16 15 14 13 12 11 10 9 8 7 6 5 3 2 1 0
+5 17 16 15 14 13 12 11 10 9 8 7 6 4 3 2 1 0
+6 17 16 15 14 13 12 11 10 9 8 7 5 4 3 2 1 0
+7 17 16 15 14 13 12 11 10 9 8 6 5 4 3 2 1 0
+8 17 16 15 14 13 12 11 10 9 7 6 5 4 3 2 1 0
+9 0 17 16 15 14 13 12 11 10 8 7 6 5 4 3 2 1
+10 17 16 15 14 13 12 11 9 8 7 6 5 4 3 2 1 0
+11 0 17 16 15 14 13 12 10 9 8 7 6 5 4 3 2 1
+12 17 16 15 14 13 11 10 9 8 7 6 5 4 3 2 1 0
+13 17 16 15 14 12 11 10 9 8 7 6 5 4 3 2 1 0
+14 17 16 15 13 12 11 10 9 8 7 6 5 4 3 2 1 0
+15 17 16 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0
+16 17 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0
+17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0
+18 19
+19 20
+20 -1
+#Dependency Lists(Users Of)
+0 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1
+1 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 0
+2 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 1 0
+3 17 16 15 14 13 12 11 10 9 8 7 6 5 4 2 1 0
+4 17 16 15 14 13 12 11 10 9 8 7 6 5 3 2 1 0
+5 17 16 15 14 13 12 11 10 9 8 7 6 4 3 2 1 0
+6 17 16 15 14 13 12 11 10 9 8 7 5 4 3 2 1 0
+7 17 16 15 14 13 12 11 10 9 8 6 5 4 3 2 1 0
+8 17 16 15 14 13 12 11 10 9 7 6 5 4 3 2 1 0
+9 17 16 15 14 13 12 11 10 8 7 6 5 4 3 2 1 0
+10 17 16 15 14 13 12 11 9 8 7 6 5 4 3 2 1 0
+11 17 16 15 14 13 12 10 9 8 7 6 5 4 3 2 1 0
+12 17 16 15 14 13 11 10 9 8 7 6 5 4 3 2 1 0
+13 17 16 15 14 12 11 10 9 8 7 6 5 4 3 2 1 0
+14 17 16 15 13 12 11 10 9 8 7 6 5 4 3 2 1 0
+15 17 16 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0
+16 17 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0
+17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0
+18 -1
+19 18
+20 19
+#Design Unit to File Association
+module work box_ave 20
+module work ADC_top 18
+module work sigmadelta_adc 19
+module work pmi_sub 16
+module work lscc_subtractor 17
+module work pmi_ram_dq 14
+module work lscc_ram_dq 15
+module work pmi_ram_dp 12
+module work lscc_ram_dp 13
+module work pmi_mult 10
+module work pmi_multaddsub 8
+module work pmi_mac 6
+module work lscc_mult_accumulate 7
+module work pmi_dsp 5
+module work pmi_complex_mult 3
+module work lscc_multiplier_dsp 4
+module work lscc_multiplier_lut 4
+module work lscc_multiplier 4
+module work lscc_complex_mult 4
+module work lscc_mult_add_sub 4
+module work pmi_add 1
+module work lscc_adder 2

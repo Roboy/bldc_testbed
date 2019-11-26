@@ -1,0 +1,6 @@
+#Start recording tcl command: 9/24/2018 15:01:50
+#Project Location: D:/Radiant_porting/ADC_deltaSigma/SimpleSigmaDeltaADCSourceCode/project/ice40up/verilog; Project name: ice40up_simple_adc
+prj_open "D:/Radiant_porting/ADC_deltaSigma/SimpleSigmaDeltaADCSourceCode/project/ice40up/verilog/ice40up_verilog.rdf"
+prj_run Export -impl impl_1 -forceOne
+prj_run Export -impl impl_1 -forceOne
+#Stop recording: 9/24/2018 15:38:40

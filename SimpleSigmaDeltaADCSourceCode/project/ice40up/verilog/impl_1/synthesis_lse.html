@@ -1,0 +1,370 @@
+<HTML>
+<HEAD>
+<TITLE>Synthesis Report</TITLE>
+<link href="file:///C:/lscc/radiant/1.0/data/theme/css/dark/report.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="file:///C:/lscc/radiant/1.0/data/theme/css/print/report.css" rel="stylesheet" type="text/css" media="print"/>
+<style type="text/css">
+#toc {
+  position: fixed;
+  right: 2px;
+  top: 2px;
+  padding: 2px 5px 2px 5px;
+  background-color:rgba(210,210,210,0.1);
+  border-style: solid;
+  border-color: rgba(192,192,192,0.8);
+  border-width:1px;
+}
+#toc_list {
+  display: none;
+  }
+</style>
+
+<script type="text/javascript">
+<!--
+function showTocList() {
+var a = document.getElementById("toc_list");
+a.style.display = "block";
+}
+
+function hideTocList() {
+var a = document.getElementById("toc_list");
+if (a)
+    a.style.display = "none";
+}
+
+//-->
+</script>
+
+</HEAD>
+
+<BODY>
+
+<DIV id="content" onclick="hideTocList()"><PRE>
+<A name="Syn"></A><B><U><big>Synthesis Report</big></U></B>
+synthesis:  version Radiant (64-bit) 1.0.0.350.6
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2018 Lattice Semiconductor Corporation,  All rights reserved.
+Mon Sep 24 15:02:25 2018
+
+
+Command Line:  C:\lscc\radiant\1.0\ispfpga\bin\nt64\synthesis.exe -f ice40up_simple_adc_impl_1_lattice.synproj -gui -msgset D:/Radiant_porting/ADC_deltaSigma/SimpleSigmaDeltaADCSourceCode/project/ice40up/verilog/promote.xml 
+
+Synthesis options:
+The -a option is iCE40UP.
+The -t option is SG48.
+The -sp option is High-Performance_1.2V.
+The -p option is iCE40UP5K.
+                                                          
+
+
+##########################################################
+
+
+### Lattice Family : iCE40UP
+
+
+### Device  : iCE40UP5K
+
+
+### Package : SG48
+
+
+### Speed   : High-Performance_1.2V
+
+
+                                                         
+
+
+INFO - synthesis: User-Selected Strategy Settings
+Optimization goal = Area
+Top-level module name = ADC_top.
+Target frequency = 1.000000 MHz.
+Maximum fanout = 1000.
+Timing path count = 3
+RWCheckOnRam = 0
+
+BRAM utilization = 100.000000 %
+DSP usage = true
+DSP utilization = 100.000000 %
+fsm_encoding_style = auto
+resolve_mixed_drivers = 0
+fix_gated_clocks = 1
+
+
+Mux style = auto (Default)
+Use Carry Chain = true
+carry_chain_length = 0
+Loop Limit = 1950.
+Use IO Insertion = TRUE
+Use IO Reg = AUTO
+
+Resource Sharing = TRUE
+Propagate Constants = TRUE
+Remove Duplicate Registers = TRUE
+Output HDL file name = ice40up_simple_adc_impl_1.vm.
+ROM style = auto
+RAM style = auto
+The -comp option is FALSE.
+The -syn option is FALSE.
+-path C:/lscc/radiant/1.0/ispfpga/ice40tp/data (searchpath added)
+-path D:/Radiant_porting/ADC_deltaSigma/SimpleSigmaDeltaADCSourceCode/project/ice40up/verilog (searchpath added)
+-path D:/Radiant_porting/ADC_deltaSigma/SimpleSigmaDeltaADCSourceCode/project/ice40up/verilog/impl_1 (searchpath added)
+Mixed language design
+Verilog design file = C:/lscc/radiant/1.0/ip/pmi/pmi.v
+Verilog design file = D:/Radiant_porting/ADC_deltaSigma/SimpleSigmaDeltaADCSourceCode/source/verilog/radiant/adc_top.v
+Verilog design file = D:/Radiant_porting/ADC_deltaSigma/SimpleSigmaDeltaADCSourceCode/source/verilog/radiant/sigmadelta_adc_ice40.v
+Verilog design file = D:/Radiant_porting/ADC_deltaSigma/SimpleSigmaDeltaADCSourceCode/source/verilog/radiant/box_ave.v
+VHDL library = pmi
+VHDL design file = C:/lscc/radiant/1.0/ip/pmi/pmi.vhd
+The -r option is OFF. [ Remove LOC Properties is OFF. ]
+Compile design.
+Compile Design Begin
+Analyzing Verilog file c:/lscc/radiant/1.0/ip/pmi/pmi.v. VERI-1482
+INFO - synthesis: c:/lscc/radiant/1.0/ip/pmi/pmi.v(1): analyzing included file c:/lscc/radiant/1.0/ip/pmi/pmi_add.v. VERI-1328
+INFO - synthesis: c:/lscc/radiant/1.0/ip/pmi/pmi_add.v(50): analyzing included file c:/lscc/radiant/1.0/ip/pmi/../common/adder/rtl/lscc_adder.v. VERI-1328
+INFO - synthesis: c:/lscc/radiant/1.0/ip/pmi/pmi.v(2): analyzing included file c:/lscc/radiant/1.0/ip/pmi/pmi_complex_mult.v. VERI-1328
+INFO - synthesis: c:/lscc/radiant/1.0/ip/pmi/pmi_complex_mult.v(52): analyzing included file c:/lscc/radiant/1.0/ip/pmi/../common/complex_mult/rtl/lscc_complex_mult.v. VERI-1328
+INFO - synthesis: c:/lscc/radiant/1.0/ip/pmi/pmi.v(3): analyzing included file c:/lscc/radiant/1.0/ip/pmi/pmi_dsp.v. VERI-1328
+INFO - synthesis: c:/lscc/radiant/1.0/ip/pmi/pmi.v(4): analyzing included file c:/lscc/radiant/1.0/ip/pmi/pmi_mac.v. VERI-1328
+INFO - synthesis: c:/lscc/radiant/1.0/ip/pmi/pmi_mac.v(52): analyzing included file c:/lscc/radiant/1.0/ip/pmi/../common/mult_accumulate/rtl/lscc_mult_accumulate.v. VERI-1328
+INFO - synthesis: c:/lscc/radiant/1.0/ip/pmi/pmi.v(5): analyzing included file c:/lscc/radiant/1.0/ip/pmi/pmi_multaddsub.v. VERI-1328
+INFO - synthesis: c:/lscc/radiant/1.0/ip/pmi/pmi_multaddsub.v(52): analyzing included file c:/lscc/radiant/1.0/ip/pmi/../common/mult_add_sub/rtl/lscc_mult_add_sub.v. VERI-1328
+INFO - synthesis: c:/lscc/radiant/1.0/ip/pmi/pmi.v(6): analyzing included file c:/lscc/radiant/1.0/ip/pmi/pmi_mult.v. VERI-1328
+INFO - synthesis: c:/lscc/radiant/1.0/ip/pmi/pmi_mult.v(51): analyzing included file c:/lscc/radiant/1.0/ip/pmi/../common/multiplier/rtl/lscc_multiplier.v. VERI-1328
+INFO - synthesis: c:/lscc/radiant/1.0/ip/pmi/pmi.v(7): analyzing included file c:/lscc/radiant/1.0/ip/pmi/pmi_ram_dp.v. VERI-1328
+INFO - synthesis: c:/lscc/radiant/1.0/ip/pmi/pmi_ram_dp.v(47): analyzing included file c:/lscc/radiant/1.0/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
+INFO - synthesis: c:/lscc/radiant/1.0/ip/pmi/pmi.v(8): analyzing included file c:/lscc/radiant/1.0/ip/pmi/pmi_ram_dq.v. VERI-1328
+INFO - synthesis: c:/lscc/radiant/1.0/ip/pmi/pmi_ram_dq.v(45): analyzing included file c:/lscc/radiant/1.0/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
+INFO - synthesis: c:/lscc/radiant/1.0/ip/pmi/pmi.v(9): analyzing included file c:/lscc/radiant/1.0/ip/pmi/pmi_sub.v. VERI-1328
+INFO - synthesis: c:/lscc/radiant/1.0/ip/pmi/pmi_sub.v(50): analyzing included file c:/lscc/radiant/1.0/ip/pmi/../common/subtractor/rtl/lscc_subtractor.v. VERI-1328
+Analyzing Verilog file d:/radiant_porting/adc_deltasigma/simplesigmadeltaadcsourcecode/source/verilog/radiant/adc_top.v. VERI-1482
+Analyzing Verilog file d:/radiant_porting/adc_deltasigma/simplesigmadeltaadcsourcecode/source/verilog/radiant/sigmadelta_adc_ice40.v. VERI-1482
+Analyzing Verilog file d:/radiant_porting/adc_deltasigma/simplesigmadeltaadcsourcecode/source/verilog/radiant/box_ave.v. VERI-1482
+Analyzing VHDL file c:/lscc/radiant/1.0/ip/pmi/pmi.vhd. VHDL-1481
+INFO - synthesis: c:/lscc/radiant/1.0/ip/pmi/pmi.vhd(4): analyzing package components. VHDL-1014
+unit ADC_top is not yet analyzed. VHDL-1485
+INFO - synthesis: The default VHDL library search path is now "D:/Radiant_porting/ADC_deltaSigma/SimpleSigmaDeltaADCSourceCode/project/ice40up/verilog/impl_1". VHDL-1504
+Top module language type = Verilog.
+Top module name (Verilog, mixed language): ADC_top
+INFO - synthesis: d:/radiant_porting/adc_deltasigma/simplesigmadeltaadcsourcecode/source/verilog/radiant/adc_top.v(58): compiling module ADC_top. VERI-1018
+INFO - synthesis: d:/radiant_porting/adc_deltasigma/simplesigmadeltaadcsourcecode/source/verilog/radiant/sigmadelta_adc_ice40.v(62): compiling module sigmadelta_adc. VERI-1018
+INFO - synthesis: C:/lscc/radiant/1.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(339): compiling module IOL_B(LATCHIN="NONE_DDR"). VERI-1018
+INFO - synthesis: d:/radiant_porting/adc_deltasigma/simplesigmadeltaadcsourcecode/source/verilog/radiant/box_ave.v(62): compiling module box_ave(LPF_DEPTH_BITS=3). VERI-1018
+WARNING - synthesis: d:/radiant_porting/adc_deltasigma/simplesigmadeltaadcsourcecode/source/verilog/radiant/box_ave.v(132): expression size 32 truncated to fit in target size 3. VERI-1209
+WARNING - synthesis: d:/radiant_porting/adc_deltasigma/simplesigmadeltaadcsourcecode/source/verilog/radiant/sigmadelta_adc_ice40.v(204): expression size 32 truncated to fit in target size 10. VERI-1209
+WARNING - synthesis: d:/radiant_porting/adc_deltasigma/simplesigmadeltaadcsourcecode/source/verilog/radiant/sigmadelta_adc_ice40.v(135): input port DO1 is not connected on this instance. VDB-1013
+WARNING - synthesis: d:/radiant_porting/adc_deltasigma/simplesigmadeltaadcsourcecode/source/verilog/radiant/sigmadelta_adc_ice40.v(135): input port DO0 is not connected on this instance. VDB-1013
+WARNING - synthesis: d:/radiant_porting/adc_deltasigma/simplesigmadeltaadcsourcecode/source/verilog/radiant/sigmadelta_adc_ice40.v(135): input port IOLTO is not connected on this instance. VDB-1013
+WARNING - synthesis: d:/radiant_porting/adc_deltasigma/simplesigmadeltaadcsourcecode/source/verilog/radiant/sigmadelta_adc_ice40.v(135): input port HOLD is not connected on this instance. VDB-1013
+WARNING - synthesis: d:/radiant_porting/adc_deltasigma/simplesigmadeltaadcsourcecode/source/verilog/radiant/sigmadelta_adc_ice40.v(135): input port OUTCLK is not connected on this instance. VDB-1013
+Loading device for application lse from file 'itpa08.nph' in environment: C:/lscc/radiant/1.0/ispfpga.
+                                                         
+
+
+### Number of Logic Cells: 5280
+
+
+### Number of RAM Blocks: 30
+
+
+### Number of DSP Blocks: 8
+
+
+### Number of PLLs: 1
+
+
+### Number of IO Pins: 56
+
+
+##########################################################
+
+
+                                                         
+
+
+WARNING - synthesis: d:/radiant_porting/adc_deltasigma/simplesigmadeltaadcsourcecode/source/verilog/radiant/sigmadelta_adc_ice40.v(135): input port DO1 is not connected on this instance. VDB-1013
+WARNING - synthesis: d:/radiant_porting/adc_deltasigma/simplesigmadeltaadcsourcecode/source/verilog/radiant/sigmadelta_adc_ice40.v(135): input port DO0 is not connected on this instance. VDB-1013
+WARNING - synthesis: d:/radiant_porting/adc_deltasigma/simplesigmadeltaadcsourcecode/source/verilog/radiant/sigmadelta_adc_ice40.v(135): input port IOLTO is not connected on this instance. VDB-1013
+WARNING - synthesis: d:/radiant_porting/adc_deltasigma/simplesigmadeltaadcsourcecode/source/verilog/radiant/sigmadelta_adc_ice40.v(135): input port HOLD is not connected on this instance. VDB-1013
+WARNING - synthesis: d:/radiant_porting/adc_deltasigma/simplesigmadeltaadcsourcecode/source/verilog/radiant/sigmadelta_adc_ice40.v(135): input port OUTCLK is not connected on this instance. VDB-1013
+
+
+
+Applying 1.000000 MHz constraint to all clocks
+
+
+Starting design annotation....
+
+
+
+Starting full timing analysis...
+WARNING - synthesis: The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.
+
+
+<A name="lse_area"></A><B><U><big>Area Report</big></U></B>
+
+################### Begin Area Report (ADC_top)######################
+Number of register bits => 63 of 5280 (1 % )
+CCU2 => 18
+FD1P3XZ => 63
+IB => 3
+IOL_B => 1
+LUT4 => 42
+OB => 10
+################### End Area Report ##################
+Number of odd-length carry chains : 1
+Number of even-length carry chains : 2
+
+
+<A name="lse_clock"></A><B><U><big>Clock Report</big></U></B>
+
+################### Begin Clock Report ######################
+Clock Nets
+Number of Clocks: 1
+  Net : i_clk_in_c, loads : 1
+Clock Enable Nets
+Number of Clock Enables: 3
+Top 3 highest fanout Clock Enables:
+  Net : SSD_ADC/box_ave/accumulate, loads : 13
+  Net : SSD_ADC/n113, loads : 10
+  Net : SSD_ADC/box_ave/latch_result, loads : 9
+Highest fanout non-clock nets
+Top 10 highest fanout non-clock nets:
+  Net : SSD_ADC/rstn_N_51, loads : 63
+  Net : SSD_ADC/rollover, loads : 19
+  Net : SSD_ADC/box_ave/count[0], loads : 15
+  Net : SSD_ADC/box_ave/count[1], loads : 14
+  Net : SSD_ADC/box_ave/count[2], loads : 13
+  Net : SSD_ADC/box_ave/accumulate, loads : 13
+  Net : SSD_ADC/n113, loads : 10
+  Net : SSD_ADC/box_ave/latch_result, loads : 9
+  Net : SSD_ADC/box_ave/sample_d1, loads : 4
+  Net : SSD_ADC/box_ave/sample_d2, loads : 3
+################### End Clock Report ##################
+
+Peak Memory Usage: 109.023  MB
+
+--------------------------------------------------------------
+Total CPU time for LSE flow : 2.371  secs
+Total REAL time for LSE flow : 3.000  secs
+--------------------------------------------------------------
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></DIV>
+
+<DIV id="toc" class="radiant"><span onmousemove="showTocList()">Contents</span>
+<UL id="toc_list">
+<LI><A href=#Syn>Top</A></LI>
+<LI><A href=#lse_area>Area Report</A></LI>
+<LI><A href=#lse_clock>Clock Report</A></LI>
+</UL>
+</DIV>
+
+<button id="back_to_top" class="radiant" onclick="scrollToTop()">&lt;</button>
+<script type="text/javascript">
+<!--
+var scrollStep = 0;
+function scrollToTop(){
+  var funScroll = function() {
+    var top = document.body.scrollTop;
+    if (top == 0) {
+      scrollStep = 0;
+      return;
+    }
+    if (scrollStep == 0)
+      scrollStep = top/20 + 1;
+    top -= scrollStep;
+    if (top < 0)
+      top = 0;
+    document.body.scrollTop = top;
+    requestAnimationFrame(funScroll);
+  };
+  funScroll();
+}
+
+window.addEventListener('scroll', function(e) {
+  var backToTop = document.getElementById('back_to_top')
+  if (document.body.scrollTop > 0) {
+    backToTop.style.display = 'block';
+  } else {	backToTop.style.display = 'none'  }});
+
+//-->
+</script>
+
+<style type="text/css">
+#back_to_top {
+  bottom:20px; right:20px;
+  width:30px; height:30px;
+  font-size: 20px;
+  padding: 2px 5px 2px 5px;
+  position:fixed;
+  background-color:rgba(210,210,210,0.1);
+  border-style: solid;
+  border-color: rgba(192,192,192,0.8);
+  border-width:1px;
+  display:none;
+  -webkit-transform: rotate(90deg);
+  -webkit-transform-origin:50% 50%;
+}
+#back_to_top:focus {
+  outline-width:0px;
+}
+</style>
+
+</BODY>
+

@@ -1,0 +1,5 @@
+ldc_set_port -iobuf {IO_TYPE=LVDSE} [get_ports i_analog_cmp]
+ldc_set_port -iobuf {PULLMODE=100K IO_TYPE=LVCMOS33} [get_ports i_rst_in]
+ldc_set_location -site {4} [get_ports o_analog_out]
+ldc_set_location -site {42} [get_ports i_analog_cmp]
+ldc_set_port -iobuf {IO_TYPE=LVCMOS25} [get_ports i_clk_in]

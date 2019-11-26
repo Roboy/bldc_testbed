@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RadiantProject version="4.0" title="ice40up_simple_adc" device="iCE40UP5K-SG48I" performance_grade="High-Performance_1.2V" default_implementation="impl_1">
+    <Options/>
+    <Implementation title="impl_1" dir="impl_1" description="impl_1" synthesis="synplify" default_strategy="Strategy1">
+        <Options def_top="ADC_top"/>
+        <Source name="../../../source/verilog/radiant/adc_top.v" type="Verilog" type_short="Verilog">
+            <Options top_module="ADC_top"/>
+        </Source>
+        <Source name="../../../source/verilog/radiant/sigmadelta_adc_ice40.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../source/verilog/radiant/box_ave.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="ice40up_verilog.pdc" type="Physical Constraints File" type_short="PDC">
+            <Options/>
+        </Source>
+    </Implementation>
+    <Strategy name="Strategy1" file="ice40up_simple_adc1.sty"/>
+</RadiantProject>

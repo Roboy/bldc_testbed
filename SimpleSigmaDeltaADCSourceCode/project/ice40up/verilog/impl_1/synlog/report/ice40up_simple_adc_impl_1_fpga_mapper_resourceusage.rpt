@@ -1,0 +1,26 @@
+---------------------------------------
+Resource Usage Report for ADC_top 
+
+Mapping to part: ice40up5ksg48high-performance_1.2v
+Cell usage:
+CCU2_B          18 uses
+FD1P3DZ         63 uses
+GND             2 uses
+IOL_B           1 use
+VCC             2 uses
+LUT4            36 uses
+
+I/O ports: 13
+I/O primitives: 13
+IB             3 uses
+OB             10 uses
+
+I/O Register bits:                  0
+Register bits not including I/Os:   63 of 5280 (1%)
+
+@S |Mapping Summary:
+Total  LUTs: 36 (0%)
+
+Distribution of All Consumed LUTs = LUT4 
+Distribution of All Consumed Luts 36 = 36 
+

@@ -1,0 +1,7 @@
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
+@N: MT206 |Auto Constrain mode is enabled
+@N: MO231 :"d:\radiant_porting\adc_deltasigma\simplesigmadeltaadcsourcecode\source\verilog\radiant\sigmadelta_adc_ice40.v":149:0:149:5|Found counter in view:work.sigmadelta_adc_8s_10s_3s(verilog) instance sigma[9:0] 
+@N: MO231 :"d:\radiant_porting\adc_deltasigma\simplesigmadeltaadcsourcecode\source\verilog\radiant\sigmadelta_adc_ice40.v":197:0:197:5|Found counter in view:work.sigmadelta_adc_8s_10s_3s(verilog) instance counter[9:0] 
+@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
+@N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.

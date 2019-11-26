@@ -1,0 +1,46 @@
+----------------------------------------------------------------------
+Report for cell ADC_top.verilog
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                             CCU2_B       18       100.0
+                            FD1P3DZ       63       100.0
+                                GND        2       100.0
+                                 IB        3       100.0
+                              IOL_B        1       100.0
+                               LUT4       36       100.0
+                                 OB       10       100.0
+                                VCC        2       100.0
+                                VHI        1       100.0
+                                VLO        1       100.0
+SUB MODULES 
+                      box_ave_8s_3s        1       100.0
+           sigmadelta_adc_8s_10s_3s        1       100.0
+                            
+                         TOTAL           139           
+----------------------------------------------------------------------
+Report for cell sigmadelta_adc_8s_10s_3s.netlist
+     Instance path:  SSD_ADC
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                             CCU2_B       18       100.0
+                            FD1P3DZ       63       100.0
+                                GND        2       100.0
+                              IOL_B        1       100.0
+                               LUT4       35        97.2
+                                VCC        2       100.0
+SUB MODULES 
+                      box_ave_8s_3s        1       100.0
+                            
+                         TOTAL           122           
+----------------------------------------------------------------------
+Report for cell box_ave_8s_3s.netlist
+     Instance path:  SSD_ADC.box_ave
+                                          Cell usage:
+                               cell       count    Res Usage(%)
+                             CCU2_B        6        33.3
+                            FD1P3DZ       33        52.4
+                                GND        1        50.0
+                               LUT4       18        50.0
+                                VCC        1        50.0
+                            
+                         TOTAL            59           
