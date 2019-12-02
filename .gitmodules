@@ -1,3 +1,15 @@
 [submodule "kicad_db"]
 	path = kicad_db
 	url = https://github.com/Roboy/kicad_db
+[submodule "src/roboy_plexus"]
+	path = src/roboy_plexus
+	url = https://github.com/Roboy/roboy_plexus
+[submodule "src/roboy_communication"]
+	path = src/roboy_communication
+	url = https://github.com/Roboy/roboy_communication
+[submodule "src/common_utilities"]
+	path = src/common_utilities
+	url = https://github.com/Roboy/common_utilities
+[submodule "src/roboy_soli"]
+	path = src/roboy_soli
+	url = https://github.com/letrend/roboy_soli

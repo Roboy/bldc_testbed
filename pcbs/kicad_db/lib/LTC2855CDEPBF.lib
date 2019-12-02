@@ -1,0 +1,39 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#(c) SnapEDA 2016 (snapeda.com)
+#This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA) with Design Exception 1.0
+#
+# LTC2855CDEPBF
+#
+DEF LTC2855CDEPBF U 0 40 Y Y 1 L N
+F0 "U" 914 359 50 H V L BNN
+F1 "LTC2855CDEPBF" 890 259 50 H V L BNN
+F2 "DFN-12_DE" 0 0 50 H I L BNN
+F3 "Unavailable" 0 0 50 H I L BNN
+F4 "Interface IC - transceivers Linear Technology LTC2855CDE#PBF RS422, RS485 1/1 DFN 12" 0 0 50 H I L BNN
+F5 "Linear Technology" 0 0 50 H I L BNN
+F6 "DFN-12 Linear Technology" 0 0 50 H I L BNN
+F7 "None" 0 0 50 H I L BNN
+F8 "LTC2855CDE#PBF" 0 0 50 H I L BNN
+DRAW
+P 2 0 0 6 300 200 300 -800 N
+P 2 0 0 6 300 -800 1900 -800 N
+P 2 0 0 6 1900 -800 1900 200 N
+P 2 0 0 6 1900 200 300 200 N
+X RO 1 0 0 300 R 40 40 0 0 O 
+X *RE 2 0 -100 300 R 40 40 0 0 I 
+X DE 3 0 -200 300 R 40 40 0 0 I 
+X DI 4 0 -300 300 R 40 40 0 0 I 
+X TE 5 0 -400 300 R 40 40 0 0 I 
+X GND 6 0 -500 300 R 40 40 0 0 W 
+X NC 7 2200 -600 300 L 40 40 0 0 N 
+X Y 8 2200 -500 300 L 40 40 0 0 O 
+X Z 9 2200 -400 300 L 40 40 0 0 O 
+X B 10 2200 -300 300 L 40 40 0 0 I 
+X A 11 2200 -200 300 L 40 40 0 0 I 
+X VCC 12 2200 -100 300 L 40 40 0 0 W 
+X EPAD 13 2200 0 300 L 40 40 0 0 P 
+ENDDRAW
+ENDDEF
+#
+# End Library

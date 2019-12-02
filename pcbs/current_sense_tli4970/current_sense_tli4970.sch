@@ -1,0 +1,172 @@
+EESchema Schematic File Version 4
+LIBS:current_sense_tli4970-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L custom:TLI4970 U1
+U 1 1 5DE506D2
+P 4900 2975
+F 0 "U1" H 4900 3400 50  0000 C CNN
+F 1 "TLI4970" H 4900 3309 50  0000 C CNN
+F 2 "custom_lib:TLI4970" H 4850 2975 50  0001 C CNN
+F 3 "" H 4850 2975 50  0001 C CNN
+	1    4900 2975
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 5DE50795
+P 4175 2775
+F 0 "#PWR0101" H 4175 2525 50  0001 C CNN
+F 1 "GND" V 4180 2647 50  0000 R CNN
+F 2 "" H 4175 2775 50  0001 C CNN
+F 3 "" H 4175 2775 50  0001 C CNN
+	1    4175 2775
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3V #PWR0102
+U 1 1 5DE507FA
+P 4175 2875
+F 0 "#PWR0102" H 4175 2725 50  0001 C CNN
+F 1 "+3.3V" V 4190 3003 50  0000 L CNN
+F 2 "" H 4175 2875 50  0001 C CNN
+F 3 "" H 4175 2875 50  0001 C CNN
+	1    4175 2875
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4175 2775 4250 2775
+Wire Wire Line
+	4175 2875 4500 2875
+$Comp
+L Device:C C1
+U 1 1 5DE50BDC
+P 4250 2625
+F 0 "C1" H 4365 2671 50  0000 L CNN
+F 1 "C" H 4365 2580 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 4288 2475 50  0001 C CNN
+F 3 "~" H 4250 2625 50  0001 C CNN
+	1    4250 2625
+	1    0    0    -1  
+$EndComp
+Connection ~ 4250 2775
+Wire Wire Line
+	4250 2775 4500 2775
+$Comp
+L power:+3.3V #PWR0103
+U 1 1 5DE50C18
+P 4250 2475
+F 0 "#PWR0103" H 4250 2325 50  0001 C CNN
+F 1 "+3.3V" V 4265 2603 50  0000 L CNN
+F 2 "" H 4250 2475 50  0001 C CNN
+F 3 "" H 4250 2475 50  0001 C CNN
+	1    4250 2475
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:Conn_01x06_Female J1
+U 1 1 5DE58EEA
+P 3200 3075
+F 0 "J1" H 3094 2550 50  0000 C CNN
+F 1 "Conn_01x06_Female" H 3094 2641 50  0000 C CNN
+F 2 "custom_lib:TE-Connectivity_Micro-Match_connector_02x03_Pitch_1.27mm" H 3200 3075 50  0001 C CNN
+F 3 "~" H 3200 3075 50  0001 C CNN
+	1    3200 3075
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3400 2975 4500 2975
+Wire Wire Line
+	3400 3075 4500 3075
+Wire Wire Line
+	3400 3175 4500 3175
+Wire Wire Line
+	3400 3275 4500 3275
+$Comp
+L power:GND #PWR0104
+U 1 1 5DE593B0
+P 3400 2775
+F 0 "#PWR0104" H 3400 2525 50  0001 C CNN
+F 1 "GND" V 3405 2647 50  0000 R CNN
+F 2 "" H 3400 2775 50  0001 C CNN
+F 3 "" H 3400 2775 50  0001 C CNN
+	1    3400 2775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+3.3V #PWR0105
+U 1 1 5DE593D3
+P 3400 2875
+F 0 "#PWR0105" H 3400 2725 50  0001 C CNN
+F 1 "+3.3V" V 3415 3003 50  0000 L CNN
+F 2 "" H 3400 2875 50  0001 C CNN
+F 3 "" H 3400 2875 50  0001 C CNN
+	1    3400 2875
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Female J2
+U 1 1 5DE59542
+P 6125 2775
+F 0 "J2" H 6152 2751 50  0000 L CNN
+F 1 "Conn_01x02_Female" H 6152 2660 50  0000 L CNN
+F 2 "custom_lib:Wago_2060_2_SMD" H 6125 2775 50  0001 C CNN
+F 3 "~" H 6125 2775 50  0001 C CNN
+	1    6125 2775
+	1    0    0    -1  
+$EndComp
+Text GLabel 5300 2775 2    50   Input ~ 0
+IP+
+Text GLabel 5300 2875 2    50   Input ~ 0
+IP-
+Text GLabel 5925 2775 0    50   Input ~ 0
+IP-
+Text GLabel 5925 2875 0    50   Input ~ 0
+IP+
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 5DE59A50
+P 6200 4100
+F 0 "H1" H 6300 4146 50  0000 L CNN
+F 1 "LABEL" H 6300 4055 50  0000 L CNN
+F 2 "custom_lib:R1_ear_silk_5.5mm" H 6200 4100 50  0001 C CNN
+F 3 "~" H 6200 4100 50  0001 C CNN
+	1    6200 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 5DE59AFF
+P 6200 4300
+F 0 "H2" H 6300 4346 50  0000 L CNN
+F 1 "LABEL" H 6300 4255 50  0000 L CNN
+F 2 "custom_lib:R1_eyes_mask_5.5mm" H 6200 4300 50  0001 C CNN
+F 3 "~" H 6200 4300 50  0001 C CNN
+	1    6200 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 5DE59B33
+P 6200 4500
+F 0 "H3" H 6300 4546 50  0000 L CNN
+F 1 "LABEL" H 6300 4455 50  0000 L CNN
+F 2 "custom_lib:R1_face_mask_5.5mm" H 6200 4500 50  0001 C CNN
+F 3 "~" H 6200 4500 50  0001 C CNN
+	1    6200 4500
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

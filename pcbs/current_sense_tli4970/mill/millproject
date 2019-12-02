@@ -1,0 +1,52 @@
+# You may want to uncomment and change those in local project files (or you
+# can specify them directly as command line arguments)
+#front=board.front.gbr
+#back=board.back.gbr
+#outline=board.outline.gbr
+#drill=board.plated-drill.drl
+#preamble=preamble.ngc
+#preamble-text=preamble_text.txt
+#postamble=postamble.ngc
+
+# Common options
+#dpi=1000
+metric=true
+#metricoutput=true
+mirror-absolute=true
+optimise=true
+zchange=10.0000
+#zero-start=true
+zsafe=1.0000
+
+# Mill options
+extra-passes=0
+mill-feed=50
+mill-speed=5000
+offset=0.0
+zwork=-0.15
+
+# Drill options
+drill-feed=1000
+#drill-side=auto
+drill-speed=10000
+milldrill=true
+#nog81=false
+#onedrill=true
+zdrill=-2.5000
+
+# Outline options
+bridges=0.2000
+bridgesnum=4
+cut-feed=30
+#cut-side=auto
+cut-infeed=5.0000
+cut-speed=1000
+cutter-diameter=0.8
+fill-outline=true
+#outline-width=0.2000
+#zbridges=-0.6000
+zcut=-2.50
+
+
+
+
